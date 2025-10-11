@@ -13,13 +13,19 @@ dependencies = [
     "scipy (>=1.16.2,<2.0.0)",
     "geopandas (>=1.1.1,<2.0.0)",
     "shapely (>=2.1.2,<3.0.0)",
-    "pandas (>=2.3.3,<3.0.0)"
+    "pandas (>=2.3.3,<3.0.0)",
+    "pysheds (>=0.5,<0.6)",
+    "rioxarray (>=0.19.0,<0.20.0)",
+    "pygeohydro (>=0.19.4,<0.20.0)",
+    "pynhd (>=0.19.4,<0.20.0)",
+    "py3dep (>=0.19.0,<0.20.0)"
 ]
 
 [tool.poetry]
 
 [tool.poetry.group.dev.dependencies]
 ipython = "^9.6.0"
+matplotlib = "^3.10.7"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

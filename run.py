@@ -13,3 +13,5 @@ conditioned, flow_directions, flow_accumulation = flow_accumulation_workflow(dem
 
 stream_raster = rasterize_nhd(flowlines, dem)
 stream_vec = vectorize_streams(stream_raster, flow_directions, flow_accumulation)
+
+basins = delineate_subbasins(stream_raster, flow_directions, flow_accumulation)

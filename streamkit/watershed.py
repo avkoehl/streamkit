@@ -25,3 +25,9 @@ def compute_flow_accumulation(flow_directions):
     flow_accumulation = grid.accumulation(pysheds_flow_direction)
     flow_accumulation_xr = from_pysheds(flow_accumulation)
     return flow_accumulation_xr
+
+
+def delineate_subbasins(channel_network_raster, flow_directions):
+    # get pour points from channel network raster
+    # these are sorted so that nested basins are handled correctly
+    pass

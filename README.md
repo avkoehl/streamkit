@@ -6,9 +6,8 @@ A python toolkit for terrain-based stream network processing at the catchment sc
 - `condition_dem(dem)`: Condition a DEM to remove pits and ensure proper flow direction.
 - `compute_flow_direction(dem)`: Compute flow direction using D8 algorithm.
 - `compute_flow_accumulation(flow_direction)`: Compute flow accumulation from flow direction.
-- `extract_streams(flow_accumulation, threshold)`: Extract stream network based on flow accumulation threshold.
 - `trace_path(flow_direction, point(s))`: Trace flow path(s) from given point(s) to the outlet.
-- `compute_watershed(flow_direction, pour_point(s))`: Delineate watershed(s) from given pour point(s).
+- `delineate_subbasins(flow_direction, pour_point(s))`: Delineate watershed(s) from given pour point(s).
 
 ### Stream Network Analysis
 - `identify_source_points(streams)`: Identify source points in the stream network.

@@ -38,10 +38,9 @@ def flow_accumulation_workflow(dem):
     )
 
 
-def delineate_subbasins(stream_raster, dem):
+def delineate_subbasins(stream_raster, flow_directions, flow_accumulation):
     # get pour points from channel network raster
     # these are sorted so that nested basins are handled correctly
-    conditioned, flow_directions, flow_accumulation = flow_accumulation_workflow(dem)
     pour_points = identify_pour_points(stream_raster, flow_accumulation)
 
     subbasins = stream_raster.copy(

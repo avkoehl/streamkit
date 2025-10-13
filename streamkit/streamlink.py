@@ -10,20 +10,27 @@ def link_streams(stream_raster, flow_directions):
     Automatically finds source points and confluence points from the stream network.
     """
     dirmap = _make_numba_esri_dirmap()
-    link_arr = _link_streams_numba(stream_raster.data, flow_directions.data, dirmap)
+    sources, confluences, _ = find_stream_nodes(stream_raster, flow_directions)
+    link_arr = _link_streams_numba(
+        stream_raster.data, flow_directions.data, dirmap, sources, confluences
+    )
     link_raster = flow_directions.copy(data=link_arr)
     return link_raster
 
 
+def find_stream_nodes(stream_raster, flow_directions):
+    """Identify source points and confluence points in a stream network"""
+    dirmap = _make_numba_esri_dirmap()
+    sources, confluences, outlets = _find_stream_nodes_numba(
+        stream_raster.data, flow_directions.data, dirmap
+    )
+    return sources, confluences, outlets
+
+
 @numba.njit
-def _link_streams_numba(stream_arr, flow_directions_arr, dirmap):
+def _link_streams_numba(stream_arr, flow_directions_arr, dirmap, sources, confluences):
     """Assign unique IDs to stream links (segments between junctions)"""
     nrows, ncols = flow_directions_arr.shape
-
-    # Find junctions
-    sources, confluences = _find_stream_junctions_numba(
-        stream_arr, flow_directions_arr, dirmap
-    )
 
     # Create confluence lookup for faster checking
     confluence_arr = np.zeros((nrows, ncols), dtype=np.uint8)
@@ -73,7 +80,7 @@ def _link_streams_numba(stream_arr, flow_directions_arr, dirmap):
 
 
 @numba.njit
-def _find_stream_junctions_numba(stream_arr, flow_directions_arr, dirmap):
+def _find_stream_nodes_numba(stream_arr, flow_directions_arr, dirmap):
     """Find source points (headwaters) and confluence points in stream network"""
     nrows, ncols = flow_directions_arr.shape
     inflow_count = np.zeros((nrows, ncols), dtype=np.uint8)
@@ -110,4 +117,15 @@ def _find_stream_junctions_numba(stream_arr, flow_directions_arr, dirmap):
             elif inflow_count[row, col] > 1:
                 confluences.append((row, col))
 
-    return sources, confluences
+    # Find outlet points (no outflow)
+    outlets = []
+    for row in range(nrows):
+        for col in range(ncols):
+            if stream_arr[row, col] == 0:
+                continue
+
+            current_direction = flow_directions_arr[row, col]
+            if current_direction in (-1, -2, 0):
+                outlets.append((row, col))
+
+    return sources, confluences, outlets

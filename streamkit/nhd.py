@@ -1,6 +1,4 @@
-# methods for handling NHD flowlines data
-# rasterize_nhd
-#
+import numpy as np
 from shapely.geometry import Point
 import geopandas as gpd
 import networkx as nx
@@ -24,6 +22,22 @@ def rasterize_nhd(nhd_flowlines, dem):
 
     stream_raster = trace_streams(points, flow_directions)
     stream_raster = link_streams(stream_raster, flow_directions)
+
+    # drop any small streams (< 2 pixels)
+    # find all unique stream IDs where the count is < 2
+    unique, counts = np.unique(stream_raster.data, return_counts=True)
+    small_streams = unique[counts < 2]
+    for stream_id in small_streams:
+        stream_raster.data[stream_raster.data == stream_id] = 0
+
+    # re-label streams to be consecutive integers
+    unique, counts = np.unique(stream_raster.data, return_counts=True)
+    new_id = 1
+    for stream_id in unique:
+        if stream_id == 0:
+            continue
+        stream_raster.data[stream_raster.data == stream_id] = new_id
+        new_id += 1
     return stream_raster
 
 

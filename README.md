@@ -3,9 +3,7 @@
 A python toolkit for terrain-based stream network processing at the catchment scale.
 
 ### Watershed Analysis
-- `condition_dem(dem)`: Condition a DEM to remove pits and ensure proper flow direction.
-- `compute_flow_direction(dem)`: Compute flow direction using D8 algorithm.
-- `compute_flow_accumulation(flow_direction)`: Compute flow accumulation from flow direction.
+- `flow_accumulation_workflow(dem)`: hydrologically condition, compute flow direction and accumulation from DEM.
 - `trace_path(flow_direction, point(s))`: Trace flow path(s) from given point(s) to the outlet.
 - `delineate_subbasins(flow_direction, pour_point(s))`: Delineate watershed(s) from given pour point(s).
 
@@ -26,11 +24,6 @@ A python toolkit for terrain-based stream network processing at the catchment sc
 - `compute_slope(dem)`: Compute slope from DEM.
 - `smooth_raster(raster, spatial_radius, sigma)`: Smooth a raster using Gaussian filter preserving NaN.
 
-### Data Download
+### NHD
 - `get_huc_data(hucid, nhd_layer, dem_resolution)`: Download dem and nhd data for a huc watershed using HyRiver.
-
-## Credits
-Incorporates and wraps functionality from:
-
-- [pysheds](https://github.com/mdbartos/pysheds) - Watershed delineation and flow analysis
-- [HyRiver](https://github.com/hyriver/HyRiver) - USGS data access (NHD flowlines via pygeohydro, 3DEP elevation via py3dep)
+- `identify_inlets(nhd_flowlines)`: Identify inlet points in NHD flowlines.

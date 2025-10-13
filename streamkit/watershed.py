@@ -1,33 +1,38 @@
+import tempfile
+
 import numpy as np
 import pandas as pd
+import rioxarray as rxr
+import whitebox
 
 from streamkit._internal.adapters import to_pysheds, from_pysheds
 
 
+def condition_dem(dem):
+    wbt = whitebox.WhiteboxTools()
+    working_dir = tempfile.mkdtemp()
+    wbt.set_working_dir(working_dir)
+    wbt.verbose = False
+
+    dem.rio.to_raster(f"{working_dir}/dem.tif")
+
+    wbt.fill_depressions(
+        f"{working_dir}/dem.tif", f"{working_dir}/filled_dem.tif", fix_flats=True
+    )
+    conditioned_dem = rxr.open_rasterio(
+        f"{working_dir}/filled_dem.tif", masked=True
+    ).squeeze()
+    return conditioned_dem
+
+
 def flow_accumulation_workflow(dem):
-    pysheds_dem, grid = to_pysheds(dem)
-
-    pit_filled_dem = grid.fill_pits(pysheds_dem)
-    pits = grid.detect_pits(pit_filled_dem)
-    assert not pits.any()
-
-    flooded_dem = grid.fill_depressions(pit_filled_dem)
-    depressions = grid.detect_depressions(flooded_dem)
-    assert not depressions.any()
-
-    # inflated_dem = grid.resolve_flats(flooded_dem, eps=1e-11, max_iter=5000)
-    inflated_dem = grid.resolve_flats(flooded_dem)
-    flats = grid.detect_flats(inflated_dem)
-    # assert not flats.any()
-    if flats.any():
-        num_flats = np.sum(flats)
-        print(f"Warning: {num_flats} flat cells remain in DEM after inflation")
-
-    flow_directions = grid.flowdir(inflated_dem)
+    # wbt condition
+    conditioned_dem = condition_dem(dem)
+    pysheds_conditioned_dem, grid = to_pysheds(conditioned_dem)
+    flow_directions = grid.flowdir(pysheds_conditioned_dem)
     flow_accumulation = grid.accumulation(flow_directions)
-
     return (
-        from_pysheds(inflated_dem),
+        from_pysheds(pysheds_conditioned_dem),
         from_pysheds(flow_directions),
         from_pysheds(flow_accumulation),
     )

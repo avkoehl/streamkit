@@ -28,7 +28,7 @@ A python toolkit for terrain-based stream network processing at the catchment sc
 - `smooth_raster(raster, spatial_radius, sigma)`: Smooth a raster using Gaussian filter preserving NaN.
 
 ### Data Download
-- `get_huc_data(hucid, nhd_layer, dem_resolution)`
+- `get_huc_data(hucid, nhd_layer, dem_resolution)`: Download dem and nhd data for a huc watershed using HyRiver.
 
 ## Credits
 Incorporates and wraps functionality from:

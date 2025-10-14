@@ -16,14 +16,13 @@ def vectorize_streams(stream_raster, flow_directions, flow_accumulation):
             continue
 
         stream = stream_raster.where(stream_raster == stream_id, other=0)
-        flow_dir = flow_directions.where(stream_raster == stream_id, other=-1)
         flow_acc = flow_accumulation.where(stream_raster == stream_id, other=0)
 
         # skip any empty streams or those with one cell
         if np.sum(stream.data > 0) < 2:
             continue
 
-        line = vectorize_single_stream(stream, flow_dir, flow_acc, dirmap)
+        line = vectorize_single_stream(stream, flow_directions, flow_acc, dirmap)
         flowlines.append({"geometry": line, "stream_id": int(stream_id)})
 
     gdf = gpd.GeoDataFrame(flowlines, crs=stream_raster.rio.crs)
@@ -47,6 +46,15 @@ def vectorize_single_stream(stream, flow_dir, flow_acc, dirmap):
     path_set = set(path)
     if stream_cells_set != path_set:
         raise ValueError("Traced path does not cover all stream cells")
+
+    # if the final cell points somewhere else, add that cell to the path
+    final_direction = flow_dir.data[path[-1][0], path[-1][1]]
+    if final_direction not in (-1, -2, 0):
+        drow, dcol = dirmap[final_direction]
+        next_row = path[-1][0] + drow
+        next_col = path[-1][1] + dcol
+        if 0 <= next_row < flow_dir.shape[0] and 0 <= next_col < flow_dir.shape[1]:
+            path.append((next_row, next_col))
 
     # convert path to LineString
     rows, cols = zip(*path)

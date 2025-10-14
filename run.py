@@ -10,10 +10,10 @@ from streamkit.nx_convert import networkx_to_gdf
 from streamkit.strahler import strahler_order
 from streamkit.upstream_length import upstream_length
 from streamkit.mainstem import label_mainstem
+from streamkit.upstream_length import upstream_length_raster
 
 flowlines, dem = get_huc_data("1805000205", crs="EPSG:3310")
 
-# watershed stuff
 conditioned, flow_directions, flow_accumulation = flow_accumulation_workflow(dem)
 
 stream_raster = rasterize_nhd(flowlines, dem)
@@ -29,4 +29,4 @@ graph = label_mainstem(graph)
 gdf = networkx_to_gdf(graph)
 
 
-# reach segment
+ul = upstream_length_raster(stream_raster, flow_directions)

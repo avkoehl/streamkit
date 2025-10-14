@@ -10,7 +10,11 @@ def vector_streams_to_networkx(lines):
         start = line.geometry.coords[0]
         end = line.geometry.coords[-1]
         G.add_edge(
-            start, end, geometry=line.geometry, **line.drop("geometry").to_dict()
+            start,
+            end,
+            crs=lines.crs,
+            geometry=line.geometry,
+            **line.drop("geometry").to_dict(),
         )
     return G
 
@@ -24,4 +28,7 @@ def networkx_to_gdf(G):
                 **data,
             }
         )
-    return gpd.GeoDataFrame(edges, geometry="geometry")
+    gdf = gpd.GeoDataFrame(edges, geometry="geometry")
+    gdf = gdf.set_crs(gdf["crs"].iloc[0])
+    gdf = gdf.drop(columns=["crs"])
+    return gdf

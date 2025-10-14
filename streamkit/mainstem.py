@@ -6,9 +6,9 @@ def label_mainstem(G):
         raise ValueError(
             "All edges must have a 'strahler' attribute. Run strahler_order() first."
         )
-    if not all("upstream_length" in G.edges[e] for e in G.edges):
+    if not all("max_upstream_length" in G.edges[e] for e in G.edges):
         raise ValueError(
-            "All edges must have an 'upstream_length' attribute. Run upstream_length() first."
+            "All edges must have a 'max_upstream_length' attribute. Run upstream_length() first."
         )
 
     # initialize all edges as not mainstem_edge
@@ -44,7 +44,7 @@ def _label_mainstem(G, root):
             mainstem_edge = candidates[0]
         else:
             # if there is a tie, choose the one with the longest upstream length
-            upstream_lengths = [G.edges[e]["upstream_length"] for e in candidates]
+            upstream_lengths = [G.edges[e]["max_upstream_length"] for e in candidates]
             max_length = max(upstream_lengths)
             longest_candidates = [
                 e

@@ -27,4 +27,6 @@ graph = strahler_order(graph)
 graph = upstream_length(graph)
 graph = label_mainstem(graph)
 gdf = networkx_to_gdf(graph)
-gdf.to_file("output.gpkg", layer="streams", driver="GPKG")
+
+
+# reach segment

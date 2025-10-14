@@ -6,7 +6,7 @@ authors = [
     {name = "Arthur Koehl",email = "avkoehl@ucdavis.edu"}
 ]
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.14"
 dependencies = [
     "numba (>=0.62.1,<0.63.0)",
     "numpy (>=2.3.3,<3.0.0)",
@@ -20,7 +20,8 @@ dependencies = [
     "pynhd (>=0.19.4,<0.20.0)",
     "py3dep (>=0.19.0,<0.20.0)",
     "whitebox (>=2.3.6,<3.0.0)",
-    "shapelysmooth (>=0.2.1,<0.3.0)"
+    "shapelysmooth (>=0.2.1,<0.3.0)",
+    "ruptures (>=1.1.10,<2.0.0)"
 ]
 
 [tool.poetry]

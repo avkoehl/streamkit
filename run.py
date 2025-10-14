@@ -2,7 +2,11 @@ import matplotlib.pyplot as plt
 import geopandas as gpd
 
 from streamkit.data import get_huc_data
-from streamkit.watershed import flow_accumulation_workflow, delineate_subbasins
+from streamkit.watershed import (
+    flow_accumulation_workflow,
+    delineate_subbasins,
+    compute_hand,
+)
 from streamkit.nhd import rasterize_nhd
 from streamkit.vectorize_streams import vectorize_streams
 from streamkit.nx_convert import vector_streams_to_networkx
@@ -11,6 +15,7 @@ from streamkit.strahler import strahler_order
 from streamkit.upstream_length import upstream_length
 from streamkit.mainstem import label_mainstem
 from streamkit.upstream_length import upstream_length_raster
+
 
 flowlines, dem = get_huc_data("1805000205", crs="EPSG:3310")
 
@@ -30,3 +35,4 @@ gdf = networkx_to_gdf(graph)
 
 
 ul = upstream_length_raster(stream_raster, flow_directions)
+hand = compute_hand(dem, flow_directions, stream_raster)

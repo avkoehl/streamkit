@@ -25,6 +25,14 @@ def condition_dem(dem):
     return conditioned_dem
 
 
+def compute_hand(dem, flow_directions, streams):
+    dem, grid = to_pysheds(dem)
+    flow_directions, _ = to_pysheds(flow_directions)
+    streams, _ = to_pysheds(streams)
+    hand = grid.compute_hand(flow_directions, dem, streams > 0)
+    return from_pysheds(hand)
+
+
 def flow_accumulation_workflow(dem):
     # wbt condition
     conditioned_dem = condition_dem(dem)

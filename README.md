@@ -1,10 +1,10 @@
 # streamkit
 
-A python toolkit for terrain-based stream network processing at the catchment scale.
+A python toolkit for terrain-based stream network processing.
 
 ## Overview
 
-streamkit provides tools for analyzing and manipulating stream networks derived from digital elevation models (DEMs). It includes functionalities for:
+streamkit provides tools for analyzing and manipulating stream networks derived from DEMs. It includes functionalities for:
 
 
 - **Watershed delineation** - DEM conditioning, flow direction, flow accumulation, and basin delineation

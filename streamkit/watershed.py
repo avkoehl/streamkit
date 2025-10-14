@@ -26,10 +26,12 @@ def condition_dem(dem):
 
 
 def compute_hand(dem, flow_directions, streams):
+    # note ESRI d8 flow direction encoding
     dem, grid = to_pysheds(dem)
     flow_directions, _ = to_pysheds(flow_directions)
     streams, _ = to_pysheds(streams)
-    hand = grid.compute_hand(flow_directions, dem, streams > 0)
+    dirmap = (64, 128, 1, 2, 32, 16, 8, 4)
+    hand = grid.compute_hand(flow_directions, dem, streams > 0, dirmap=dirmap)
     return from_pysheds(hand)
 
 

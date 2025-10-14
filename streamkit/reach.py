@@ -34,11 +34,9 @@ def delineate_reaches(
                 min_size=min_size,
                 smooth_window=smooth_window,
             )
-            print("Initial number of reaches:", stream_df["reach_id"].nunique())
             stream_df = merge_reaches_by_threshold(
                 stream_df, threshold_degrees=threshold_degrees
             )
-            print("Number of reaches after merging:", stream_df["reach_id"].nunique())
             stream_df["reach_val"] = stream_df["reach_id"] + stream_val * 1000
             rows, cols = stream_df["row"].values, stream_df["col"].values
             reaches.data[rows, cols] = stream_df["reach_val"].values

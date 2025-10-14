@@ -21,8 +21,6 @@ def networkx_to_gdf(G):
         edges.append(
             {
                 "geometry": gpd.points_from_xy([u[0], v[0]], [u[1], v[1]]).unary_union,
-                "start": u,
-                "end": v,
                 **data,
             }
         )

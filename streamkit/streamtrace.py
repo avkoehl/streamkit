@@ -76,7 +76,7 @@ def _trace_streams_numba(points, flow_directions_arr, dirmap):
 
 @numba.njit
 def _path_numba(row, col, flow_directions_arr, dirmap, break_conditions_arr):
-    """Trace the path of a stream segment from start to end using flow directions"""
+    """Trace the path from a starting cell until a break condition or outlet/pit is met"""
     nrows, ncols = flow_directions_arr.shape
     path = [(row, col)]
 

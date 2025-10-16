@@ -8,9 +8,31 @@ import pandas as pd
 import numpy as np
 import xarray as xr
 from scipy.spatial import cKDTree as KDTree
+from shapely.geometry import LineString
 
 
-def compute_rem(linestring, dem, sample_distance):
+def compute_rem(
+    linestring: LineString, dem: xr.DataArray, sample_distance: float
+) -> xr.DataArray:
+    """Calculate Relative Elevation Model by detrending valley slope from a DEM.
+
+    Removes the downstream elevation trend along a valley centerline using
+    inverse distance weighting (IDW) interpolation. Points are sampled along
+    the linestring, elevations are fitted with a polynomial, and the trend
+    surface is interpolated across the DEM using the 5 nearest neighbors.
+
+    Args:
+        linestring: Valley centerline geometry (typically a stream centerline).
+        dem: Digital elevation model to detrend.
+        sample_distance: Spacing between sample points along the linestring,
+            in the units of the DEM's CRS.
+
+    Returns:
+        Relative elevation model (REM) representing elevation relative to the
+        valley floor trend, with the same dimensions and coordinates as the
+        input DEM.
+    """
+
     points = _trend_line(linestring, dem, sample_distance)
     coords = np.array([points.geometry.x, points.geometry.y]).T
     values = points["fit"].values
@@ -35,7 +57,7 @@ def compute_rem(linestring, dem, sample_distance):
     return rem
 
 
-def coords_along_linestring(linestring, sample_distance):
+def _coords_along_linestring(linestring, sample_distance):
     dists = [i for i in range(0, int(linestring.length), sample_distance)]
     dists.append(int(linestring.length))  # add the end point
     xs, ys = np.zeros(len(dists)), np.zeros(len(dists))
@@ -48,7 +70,7 @@ def coords_along_linestring(linestring, sample_distance):
 
 
 def _trend_line(line, dem, sample_distance):
-    xs, ys = coords_along_linestring(line, sample_distance)
+    xs, ys = _coords_along_linestring(line, sample_distance)
     elevation_series = dem.sel(x=xs, y=ys, method="nearest").values
     fit = _fit_elevations(elevation_series)
     df = pd.DataFrame(

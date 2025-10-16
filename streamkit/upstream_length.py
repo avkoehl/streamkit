@@ -1,11 +1,23 @@
 import numpy as np
 import networkx as nx
+import xarray as xr
 
 from streamkit._internal.dirmap import _make_numba_esri_dirmap
-from streamkit.streamlink import find_stream_nodes
+from streamkit.streamnodes import find_stream_nodes
 
 
-def upstream_length_raster(streams, flow_direction):
+def upstream_length_raster(
+    streams: xr.DataArray, flow_direction: xr.DataArray
+) -> xr.DataArray:
+    """
+    For each cell in the stream raster, compute the maximum upstream length
+
+    Args:
+        streams: A binary raster where stream cells are 1 and non-stream cells are 0.
+        flow_direction: A raster representing flow direction using ESRI convention.
+    Returns:
+        A raster where each stream cell contains the maximum upstream length in map units.
+    """
     dirmap = _make_numba_esri_dirmap()
     sources, _, _ = find_stream_nodes(streams, flow_direction)
     distance_arr = _distance_from_head(
@@ -51,7 +63,15 @@ def _distance_from_head(stream_arr, headwater_points, flow_dir_arr, dirmap):
     return distance_arr
 
 
-def upstream_length(G):
+def upstream_length(G: nx.DiGraph) -> nx.DiGraph:
+    """
+    Compute the maximum upstream length for each edge in a directed graph G. Uses the length attribute of the edge geometry.
+
+    Args:
+        G: A directed graph where edges have a 'geometry' attribute (shapely LineString).
+    Returns:
+        A copy of the graph with an additional attribute 'max_upstream_length' for each edge.
+    """
     # Compute the maximum upstream length for each edge in a directed graph G.
     # confirm that all edges have a 'geometry' attribute
     G = G.copy()

@@ -1,28 +1,41 @@
-"""
-profilesProcess Cross Section Linestrings into profiles.
-
-The linestrings are converted into a profile by sampling points along the linestring at user specified intervals.
-"""
-
 import numpy as np
 import geopandas as gpd
 import pandas as pd
 
 
-def make_profiles(xs_linestrings, point_interval):
-    """
-    Generates points along cross section linestrings at specified intervals.
-    Returns a GeoDataFrame with points and their corresponding sides (center, positive, negative).
+def sample_cross_sections(
+    xs_linestrings: gpd.GeoDataFrame, point_interval: float
+) -> gpd.GeoDataFrame:
+    """Generate profile points along cross-section linestrings at regular intervals.
 
-    xs_id (int id), side (negative, positive, center), geometry (Point), distance (from center) + any other columns in xs_linestrings.
+    Creates evenly-spaced points along each cross-section line, measuring distances
+    from the center point. Points are labeled as 'center', 'positive' (downstream
+    of center), or 'negative' (upstream of center).
+
+    Args:
+        xs_linestrings: GeoDataFrame containing LineString geometries representing
+            cross-sections. If 'xs_id' column is not present, sequential IDs will
+            be automatically assigned.
+        point_interval: Spacing between points along each cross-section, in the
+            units of the GeoDataFrame's CRS.
+
+    Returns:
+        A GeoDataFrame with Point geometries containing columns:
+            - xs_id: Cross-section identifier
+            - side: Position relative to center ('center', 'positive', 'negative')
+            - distance: Distance from center point (negative for upstream, positive
+              for downstream)
+            - geometry: Point geometry
+            - Additional columns from input xs_linestrings are preserved
     """
+
     if "xs_id" not in xs_linestrings.columns:
         xs_linestrings["xs_id"] = np.arange(1, len(xs_linestrings) + 1)
 
     xs_points = []
     for xs_id, xs_linestring in xs_linestrings.groupby("xs_id"):
         for _, linestring in xs_linestring.iterrows():
-            points = points_along_linestring(
+            points = _points_along_linestring(
                 linestring.geometry, point_interval, crs=xs_linestrings.crs
             )
             points["xs_id"] = xs_id
@@ -37,7 +50,7 @@ def make_profiles(xs_linestrings, point_interval):
     ).reset_index(drop=True)
 
 
-def points_along_linestring(linestring, interval, crs=None):
+def _points_along_linestring(linestring, interval, crs=None):
     center = linestring.length / 2
 
     # Generate distances for all three directions

@@ -1,4 +1,26 @@
-def label_mainstem(G):
+import networkx as nx
+
+
+def label_mainstem(G: nx.DiGraph) -> nx.DiGraph:
+    """Label mainstem edges in a stream network graph.
+
+    Identifies and labels the main channel (mainstem) of each drainage network
+    by traversing from outlet nodes upstream. Edges are labeled with a 'mainstem'
+    attribute set to True for mainstem edges and False for tributaries.
+
+    Args:
+        G: A directed graph representing a stream network. Each edge must have
+            'strahler' and 'max_upstream_length' attributes. If these are missing,
+            run strahler_order() and upstream_length() first.
+
+    Returns:
+        A copy of the input graph with edges labeled with a 'mainstem' boolean
+        attribute indicating whether each edge is part of the main channel.
+
+    Raises:
+        ValueError: If any edge is missing the required 'strahler' or
+            'max_upstream_length' attributes.
+    """
     G = G.copy()
 
     # make sure that edges have a 'strahler' attribute

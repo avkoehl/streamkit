@@ -20,10 +20,9 @@ from streamkit.strahler import strahler_order
 from streamkit.upstream_length import upstream_length
 from streamkit.mainstem import label_mainstem
 from streamkit.xs import network_cross_sections
-from streamkit.profile import make_profiles
+from streamkit.profile import sample_cross_sections
 
 # Terrain analysis
-from streamkit.slope import compute_slope
 from streamkit.smooth import gaussian_smooth_raster
 from streamkit.upstream_length import upstream_length_raster
 
@@ -56,10 +55,9 @@ __all__ = [
     "upstream_length",
     "label_mainstem",
     "network_cross_sections",
-    "make_profiles",
+    "sample_cross_sections",
     # Terrain
     "upstream_length_raster",
-    "compute_slope",
     "gaussian_smooth_raster",
     # Reaches
     "delineate_reaches",

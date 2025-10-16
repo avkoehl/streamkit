@@ -1,3 +1,5 @@
+from typing import Optional, Sequence
+
 import pandas as pd
 import geopandas as gpd
 import numpy as np
@@ -7,8 +9,24 @@ from shapelysmooth import taubin_smooth
 
 
 def network_cross_sections(
-    linestrings, interval_distance, width, linestring_ids=None, smoothed=False
+    linestrings: gpd.GeoSeries,
+    interval_distance: float,
+    width: float,
+    linestring_ids: Optional[Sequence] = None,
+    smoothed: bool = False,
 ):
+    """
+    Create cross-sections at regular intervals along linestrings.
+
+    Args:
+        linestrings: Linestring geometries.
+        interval_distance: Distance between cross-sections along the linestrings.
+        width: Width of each cross-section.
+        linestring_ids: Optional identifiers for each linestring. If None, the index of linestrings is used.
+        smoothed: Whether to use smoothed angles for cross-sections.
+    Returns:
+        linestrings of cross sections
+    """
     if linestring_ids is None:
         linestring_ids = linestrings.index
     else:
@@ -17,7 +35,7 @@ def network_cross_sections(
 
     xsections = []
     for cid, linestring in zip(linestring_ids, linestrings):
-        channel_xsections = create_cross_sections(
+        channel_xsections = _create_cross_sections(
             linestring, interval_distance, width, crs=linestrings.crs, smoothed=smoothed
         )
         # convert to DataFrame and add segment_id
@@ -31,19 +49,19 @@ def network_cross_sections(
     return xsections
 
 
-def create_cross_sections(
+def _create_cross_sections(
     linestring, interval_distance, width, crs=None, smoothed=False
 ):
     # returns gpd.GeoSeries[gpd.LineString] for cross sections
     if smoothed:
-        angles, points = compute_perpendicular_angles_smoothed(
+        angles, points = _compute_perpendicular_angles_smoothed(
             linestring, interval_distance
         )
     else:
-        angles, points = compute_perpendicular_angles(linestring, interval_distance)
+        angles, points = _compute_perpendicular_angles(linestring, interval_distance)
 
     lines = [
-        create_linestring(point, angle, width) for point, angle in zip(points, angles)
+        _create_linestring(point, angle, width) for point, angle in zip(points, angles)
     ]
     series = gpd.GeoSeries(lines)
     if crs:
@@ -65,7 +83,7 @@ def _points_on_either_side(linestring, distance, delta=1):
     return left_point, right_point
 
 
-def compute_perpendicular_angles(linestring, interval_distance):
+def _compute_perpendicular_angles(linestring, interval_distance):
     distances = np.arange(0, linestring.length + interval_distance, interval_distance)
     distances = distances[distances <= linestring.length]
 
@@ -82,7 +100,7 @@ def compute_perpendicular_angles(linestring, interval_distance):
     return angles, points
 
 
-def compute_perpendicular_angles_smoothed(linestring, interval_distance):
+def _compute_perpendicular_angles_smoothed(linestring, interval_distance):
     """
     The smoothed approach calculates perpendicular angles from a smoothed
     version of the linestring (for more consistent, less jagged directions) but
@@ -90,7 +108,7 @@ def compute_perpendicular_angles_smoothed(linestring, interval_distance):
     maintain accurate spatial relationships).
     """
     smoothed_linestring = chaikin_smooth(taubin_smooth(linestring))
-    angles, points = compute_perpendicular_angles(
+    angles, points = _compute_perpendicular_angles(
         smoothed_linestring, interval_distance
     )
 
@@ -98,7 +116,7 @@ def compute_perpendicular_angles_smoothed(linestring, interval_distance):
     new_points = []
     new_angles = []
     for point, angle in zip(points, angles):
-        line = create_linestring(point, angle, width=200)
+        line = _create_linestring(point, angle, width=200)
         # get the closest intersection point on linestring to point
         intersection = linestring.intersection(line)
 
@@ -121,7 +139,7 @@ def compute_perpendicular_angles_smoothed(linestring, interval_distance):
     return new_angles, new_points
 
 
-def create_linestring(point, angle, width):
+def _create_linestring(point, angle, width):
     start_x = point.x - width / 2 * np.cos(angle)
     start_y = point.y - width / 2 * np.sin(angle)
     end_x = point.x + width / 2 * np.cos(angle)

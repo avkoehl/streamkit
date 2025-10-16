@@ -3,6 +3,7 @@ import tempfile
 import numpy as np
 import pandas as pd
 import rioxarray as rxr
+import xarray as xr
 import whitebox
 
 from streamkit._internal.adapters import to_pysheds, from_pysheds
@@ -35,7 +36,22 @@ def compute_hand(dem, flow_directions, streams):
     return from_pysheds(hand)
 
 
-def flow_accumulation_workflow(dem):
+def flow_accumulation_workflow(
+    dem: xr.DataArray,
+) -> tuple[xr.DataArray, xr.DataArray, xr.DataArray]:
+    """
+    Given a DEM, compute the conditioned DEM, flow directions, and flow
+    accumulation. Uses d8 flow directions, wraps around whiteboxtools 'fill
+    depression with fix flats' algorithm. Flow direction and accumulation done
+    with pysheds. Uses ESRI flow direction encoding.
+
+    Args:
+        dem: DEM raster
+    Returns:
+        A tuple containing the conditioned DEM, flow directions, and flow
+        accumulation rasters
+
+    """
     # wbt condition
     conditioned_dem = condition_dem(dem)
     pysheds_conditioned_dem, grid = to_pysheds(conditioned_dem)
@@ -48,10 +64,27 @@ def flow_accumulation_workflow(dem):
     )
 
 
-def delineate_subbasins(stream_raster, flow_directions, flow_accumulation):
+def delineate_subbasins(
+    stream_raster: xr.DataArray,
+    flow_directions: xr.DataArray,
+    flow_accumulation: xr.DataArray,
+) -> xr.DataArray:
+    """
+    Delineate all subbasins given a channel network raster. Detects pour points
+    for each unique stream segment by finding the cell with the highest flow
+    accumulation for that segment (based on ID).
+
+    Args:
+        stream_raster: Raster of channel network with unique IDs for each
+            segment
+        flow_directions: Flow directions raster (ESRI d8 encoding)
+        flow_accumulation: Flow accumulation raster
+    Returns:
+        Raster of subbasins with same IDs as stream_raster
+    """
     # get pour points from channel network raster
     # these are sorted so that nested basins are handled correctly
-    pour_points = identify_pour_points(stream_raster, flow_accumulation)
+    pour_points = _identify_pour_points(stream_raster, flow_accumulation)
 
     subbasins = stream_raster.copy(
         data=np.zeros_like(stream_raster.data, dtype=np.int32)
@@ -75,7 +108,7 @@ def delineate_subbasins(stream_raster, flow_directions, flow_accumulation):
     return subbasins
 
 
-def identify_pour_points(stream_raster, flow_accumulation):
+def _identify_pour_points(stream_raster, flow_accumulation):
     pour_points = []
     for stream_val in np.unique(stream_raster.data):
         if stream_val == 0:

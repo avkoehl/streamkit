@@ -8,39 +8,42 @@ from pygeohydro import WBD
 from pynhd import NHD
 import pandas as pd
 from rioxarray.merge import merge_arrays
+from typing import Optional, Tuple
+import xarray as xr
+import geopandas as gpd
 
 
 def get_huc_data(
-    hucid,
-    nhd_layer="flowline_mr",
-    crs="EPSG:4326",
-    dem_resolution=10,
-    wbd=None,
-    nhd=None,
-):
-    """
-    Download topography data for a given HUC ID.
+    hucid: str,
+    nhd_layer: str = "flowline_mr",
+    crs: str = "EPSG:4326",
+    dem_resolution: int = 10,
+    wbd: Optional[WBD] = None,
+    nhd: Optional[NHD] = None,
+) -> Tuple[gpd.GeoDataFrame, xr.DataArray]:
+    """Download hydrological and topographic data for a given HUC ID.
 
-    Parameters
-    ----------
-    hucid : str
-        The HUC ID for which to download topography.
-    nhd_layer : str, optional
-        The NHD layer to use for downloading flowlines. Default is "flowline_mr".
-    crs : str, optional
-        The coordinate reference system to use for the output data. Default is "EPSG:4326".
-    dem_resolution : int, optional
-        The resolution of the DEM to download. Default is 10 meters.
-    wbd : WBD, optional
-        A WBD object to use for downloading HUC boundaries. If None, a new WBD object is created.
-    nhd : NHD, optional
-        A NHD object to use for downloading flowlines. If None, a new NHD object is created.
+    Retrieves NHD flowlines, and digital elevation model (DEM) data for the
+    specified Hydrologic Unit Code (HUC) area.
 
-    Returns
-    -------
-    tuple
-        A tuple containing the flowlines, and DEM data.
+    Args:
+        hucid: The Hydrologic Unit Code identifier for the watershed area.
+        nhd_layer: The National Hydrography Dataset layer name for flowlines.
+            Defaults to "flowline_mr" (medium resolution).
+        crs: The coordinate reference system for the output data as an EPSG code
+            or other CRS string. Defaults to "EPSG:4326" (WGS84).
+        dem_resolution: The spatial resolution of the DEM in meters. Defaults to 10.
+        wbd: An existing Watershed Boundary Dataset object. If None, a new WBD
+            instance will be created.
+        nhd: An existing National Hydrography Dataset object. If None, a new NHD
+            instance will be created.
+
+    Returns:
+        A tuple containing:
+            - flowlines: GeoDataFrame with NHD flowline geometries and attributes.
+            - dem: DataArray with digital elevation model data for the HUC area.
     """
+
     huc_bounds = download_huc_bounds(hucid, wbd)
     flowlines = download_flowlines(huc_bounds, nhd, nhd_layer, True, crs)
     dem = download_dem(huc_bounds, dem_resolution, crs)

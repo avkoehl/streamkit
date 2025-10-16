@@ -4,37 +4,63 @@ import numpy as np
 import pandas as pd
 from rasterio.transform import xy
 import ruptures as rpt
+import xarray as xr
 
-from streamkit.streamtrace import route_stream
+from streamkit.streamroute import route_stream
 
 
 def delineate_reaches(
-    stream_raster,
-    flow_dir,
-    flow_acc,
-    dem,
-    penalty=None,
-    min_length=500,  # meters
-    smooth_window=None,
-    threshold_degrees=1.0,
-):
+    stream_raster: xr.DataArray,
+    flow_dir: xr.DataArray,
+    flow_acc: xr.DataArray,
+    dem: xr.DataArray,
+    penalty: float | None = None,
+    min_length: float = 500,
+    smooth_window: int | None = None,
+    threshold_degrees: float = 1.0,
+) -> xr.DataArray:
+    """Segment stream networks into reaches based on slope change points.
+
+    Uses the PELT (Pruned Exact Linear Time) changepoint detection algorithm
+    to identify distinct reaches along each stream based on slope variations.
+    Adjacent reaches with similar slopes can be merged using the threshold parameter.
+
+    Args:
+        stream_raster: Labeled stream network where each unique value represents
+            a stream segment (0 for non-stream pixels).
+        flow_dir: Flow direction raster (D8 format).
+        flow_acc: Flow accumulation raster.
+        dem: Digital elevation model for slope calculations.
+        penalty: PELT algorithm penalty parameter. If None, automatically calculated
+            as log(n) * variance of slope signal.
+        min_length: Minimum reach length in meters.
+        smooth_window: Window size for smoothing slope values before segmentation.
+            If None, no smoothing is applied.
+        threshold_degrees: Merge adjacent reaches if slope difference is below this
+            threshold in degrees.
+
+    Returns:
+        A raster where each pixel value represents a unique reach ID (0 for
+        non-stream pixels). Reach IDs are computed as reach_number + stream_id * 1000.
+    """
+
     reaches = stream_raster.copy(data=np.zeros_like(stream_raster, dtype=np.uint32))
     for stream_val in np.unique(stream_raster):
         if stream_val == 0 or np.isnan(stream_val):
             continue
         else:
-            stream_df = create_stream_points(
+            stream_df = _create_stream_points(
                 stream_raster == stream_val, flow_dir, flow_acc, dem
             )
             # roughly convert min_length in meters to number of points
             min_size = int(min_length / flow_dir.rio.resolution()[0])
-            stream_df = pelt_reaches(
+            stream_df = _pelt_reaches(
                 stream_df,
                 penalty=penalty,
                 min_size=min_size,
                 smooth_window=smooth_window,
             )
-            stream_df = merge_reaches_by_threshold(
+            stream_df = _merge_reaches_by_threshold(
                 stream_df, threshold_degrees=threshold_degrees
             )
             stream_df["reach_val"] = stream_df["reach_id"] + stream_val * 1000
@@ -43,7 +69,7 @@ def delineate_reaches(
     return reaches
 
 
-def pelt_reaches(stream_df, penalty, min_size, smooth_window, model="rbf"):
+def _pelt_reaches(stream_df, penalty, min_size, smooth_window, model="rbf"):
     if len(stream_df) < min_size:
         stream_df["reach_id"] = 0
         return stream_df
@@ -74,7 +100,7 @@ def pelt_reaches(stream_df, penalty, min_size, smooth_window, model="rbf"):
     return stream_df
 
 
-def merge_reaches_by_threshold(stream_df, threshold_degrees=1.0):
+def _merge_reaches_by_threshold(stream_df, threshold_degrees=1.0):
     """
     Merge adjacent reaches if slope change is less than threshold.
 
@@ -133,7 +159,7 @@ def merge_reaches_by_threshold(stream_df, threshold_degrees=1.0):
     return stream_df
 
 
-def create_stream_points(stream_mask, flow_dir, flow_acc, dem):
+def _create_stream_points(stream_mask, flow_dir, flow_acc, dem):
     def calculate_gradient(elevations, distances):
         gradient = np.gradient(elevations, distances)
         slope_degrees = np.degrees(np.arctan(gradient))

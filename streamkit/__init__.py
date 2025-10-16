@@ -12,7 +12,7 @@ from streamkit.watershed import (
 )
 
 # Stream vectorization and network conversion
-from streamkit.vectorize_streams import vectorize_streams, vectorize_single_stream
+from streamkit.vectorize_streams import vectorize_streams
 from streamkit.nx_convert import vector_streams_to_networkx, networkx_to_gdf
 
 # Network analysis
@@ -47,7 +47,6 @@ __all__ = [
     "delineate_subbasins",
     # Conversion Utilities
     "vectorize_streams",
-    "vectorize_single_stream",
     "vector_streams_to_networkx",
     "networkx_to_gdf",
     # Network analysis

@@ -32,7 +32,7 @@ def vector_streams_to_networkx(lines: gpd.GeoDataFrame) -> nx.DiGraph:
     return G
 
 
-def networkx_to_gdf(G):
+def networkx_to_gdf(G: nx.DiGraph) -> gpd.GeoDataFrame:
     """Convert a NetworkX directed graph back to a GeoDataFrame.
 
     Reconstructs vector stream data from a graph representation by converting

@@ -5,8 +5,7 @@ def strahler_order(G: nx.DiGraph) -> nx.DiGraph:
     """Calculate the Strahler order for each edge in a directed graph.
 
     Args:
-        G: A directed graph representing a river network. Use
-           'vector_streams_to_networkx()' to create this from vector data.
+        G: A directed graph representing a river network. Use 'vector_streams_to_networkx()' to create this from vector data.
     Returns:
         The same directed graph with an additional 'strahler' attribute on each edge
         indicating its Strahler order.

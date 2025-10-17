@@ -1,0 +1,3547 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../xs/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>API Reference - Streamkit Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Streamkit Documentation" class="md-header__button md-logo" aria-label="Streamkit Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Streamkit Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Streamkit Documentation" class="md-nav__button md-logo" aria-label="Streamkit Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Streamkit Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Downloading Data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../align_nhd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aligning NHD Data to DEM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../watershed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Watershed Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reaches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reach Delineation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Stream Network Analysis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Cross Sections
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#watershed-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Watershed Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.watershed.compute_hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      compute_hand
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.watershed.flow_accumulation_workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      flow_accumulation_workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.watershed.delineate_subbasins" class="md-nav__link">
+    <span class="md-ellipsis">
+      delineate_subbasins
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stream-vectorization-and-network-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stream Vectorization and Network Conversion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.vectorize_streams.vectorize_streams" class="md-nav__link">
+    <span class="md-ellipsis">
+      vectorize_streams
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.nx_convert.vector_streams_to_networkx" class="md-nav__link">
+    <span class="md-ellipsis">
+      vector_streams_to_networkx
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.nx_convert.networkx_to_gdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      networkx_to_gdf
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.strahler.strahler_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      strahler_order
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.upstream_length.upstream_length" class="md-nav__link">
+    <span class="md-ellipsis">
+      upstream_length
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.mainstem.label_mainstem" class="md-nav__link">
+    <span class="md-ellipsis">
+      label_mainstem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.xs.network_cross_sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      network_cross_sections
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.profile.sample_cross_sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      sample_cross_sections
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terrain-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terrain Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.smooth.gaussian_smooth_raster" class="md-nav__link">
+    <span class="md-ellipsis">
+      gaussian_smooth_raster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.upstream_length.upstream_length_raster" class="md-nav__link">
+    <span class="md-ellipsis">
+      upstream_length_raster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reach-delineation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reach Delineation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.reach.delineate_reaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      delineate_reaches
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-download-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Download Utilities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.data.get_huc_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_huc_data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.data.download_huc_bounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      download_huc_bounds
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.data.download_flowlines" class="md-nav__link">
+    <span class="md-ellipsis">
+      download_flowlines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.data.download_dem" class="md-nav__link">
+    <span class="md-ellipsis">
+      download_dem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nhd-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      NHD Utilities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.nhd.rasterize_nhd" class="md-nav__link">
+    <span class="md-ellipsis">
+      rasterize_nhd
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#watershed-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Watershed Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.watershed.compute_hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      compute_hand
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.watershed.flow_accumulation_workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      flow_accumulation_workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.watershed.delineate_subbasins" class="md-nav__link">
+    <span class="md-ellipsis">
+      delineate_subbasins
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stream-vectorization-and-network-conversion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stream Vectorization and Network Conversion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.vectorize_streams.vectorize_streams" class="md-nav__link">
+    <span class="md-ellipsis">
+      vectorize_streams
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.nx_convert.vector_streams_to_networkx" class="md-nav__link">
+    <span class="md-ellipsis">
+      vector_streams_to_networkx
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.nx_convert.networkx_to_gdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      networkx_to_gdf
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.strahler.strahler_order" class="md-nav__link">
+    <span class="md-ellipsis">
+      strahler_order
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.upstream_length.upstream_length" class="md-nav__link">
+    <span class="md-ellipsis">
+      upstream_length
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.mainstem.label_mainstem" class="md-nav__link">
+    <span class="md-ellipsis">
+      label_mainstem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.xs.network_cross_sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      network_cross_sections
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.profile.sample_cross_sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      sample_cross_sections
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terrain-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terrain Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.smooth.gaussian_smooth_raster" class="md-nav__link">
+    <span class="md-ellipsis">
+      gaussian_smooth_raster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.upstream_length.upstream_length_raster" class="md-nav__link">
+    <span class="md-ellipsis">
+      upstream_length_raster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reach-delineation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reach Delineation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.reach.delineate_reaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      delineate_reaches
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-download-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Download Utilities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.data.get_huc_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_huc_data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.data.download_huc_bounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      download_huc_bounds
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.data.download_flowlines" class="md-nav__link">
+    <span class="md-ellipsis">
+      download_flowlines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.data.download_dem" class="md-nav__link">
+    <span class="md-ellipsis">
+      download_dem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nhd-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      NHD Utilities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streamkit.nhd.rasterize_nhd" class="md-nav__link">
+    <span class="md-ellipsis">
+      rasterize_nhd
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="api-reference">API Reference</h1>
+<h2 id="watershed-analysis">Watershed Analysis</h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="streamkit.watershed.compute_hand" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">watershed</span><span class="o">.</span><span class="n">compute_hand</span><span class="p">(</span><span class="n">dem</span><span class="p">,</span> <span class="n">flow_directions</span><span class="p">,</span> <span class="n">streams</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+
+            <details class="quote">
+              <summary>Source code in <code>streamkit/watershed.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">compute_hand</span><span class="p">(</span><span class="n">dem</span><span class="p">,</span> <span class="n">flow_directions</span><span class="p">,</span> <span class="n">streams</span><span class="p">):</span>
+    <span class="c1"># note ESRI d8 flow direction encoding</span>
+    <span class="n">dem</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="n">to_pysheds</span><span class="p">(</span><span class="n">dem</span><span class="p">)</span>
+    <span class="n">flow_directions</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">to_pysheds</span><span class="p">(</span><span class="n">flow_directions</span><span class="p">)</span>
+    <span class="n">streams</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">to_pysheds</span><span class="p">(</span><span class="n">streams</span><span class="p">)</span>
+    <span class="n">dirmap</span> <span class="o">=</span> <span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">hand</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">compute_hand</span><span class="p">(</span><span class="n">flow_directions</span><span class="p">,</span> <span class="n">dem</span><span class="p">,</span> <span class="n">streams</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">dirmap</span><span class="o">=</span><span class="n">dirmap</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">from_pysheds</span><span class="p">(</span><span class="n">hand</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="streamkit.watershed.flow_accumulation_workflow" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">watershed</span><span class="o">.</span><span class="n">flow_accumulation_workflow</span><span class="p">(</span><span class="n">dem</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Given a DEM, compute the conditioned DEM, flow directions, and flow
+accumulation. Uses d8 flow directions, wraps around whiteboxtools 'fill
+depression with fix flats' algorithm. Flow direction and accumulation done
+with pysheds. Uses ESRI flow direction encoding.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>dem</code>
+            </td>
+            <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>DEM raster</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+        <p>Returns:
+    (conditioned DEM, flow directions, and flow accumulation)</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>streamkit/watershed.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">flow_accumulation_workflow</span><span class="p">(</span>
+    <span class="n">dem</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">,</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">,</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Given a DEM, compute the conditioned DEM, flow directions, and flow</span>
+<span class="sd">    accumulation. Uses d8 flow directions, wraps around whiteboxtools &#39;fill</span>
+<span class="sd">    depression with fix flats&#39; algorithm. Flow direction and accumulation done</span>
+<span class="sd">    with pysheds. Uses ESRI flow direction encoding.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        dem: DEM raster</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        (conditioned DEM, flow directions, and flow accumulation)</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># wbt condition</span>
+    <span class="n">conditioned_dem</span> <span class="o">=</span> <span class="n">condition_dem</span><span class="p">(</span><span class="n">dem</span><span class="p">)</span>
+    <span class="n">pysheds_conditioned_dem</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="n">to_pysheds</span><span class="p">(</span><span class="n">conditioned_dem</span><span class="p">)</span>
+    <span class="n">flow_directions</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">flowdir</span><span class="p">(</span><span class="n">pysheds_conditioned_dem</span><span class="p">)</span>
+    <span class="n">flow_accumulation</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">accumulation</span><span class="p">(</span><span class="n">flow_directions</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">from_pysheds</span><span class="p">(</span><span class="n">pysheds_conditioned_dem</span><span class="p">),</span>
+        <span class="n">from_pysheds</span><span class="p">(</span><span class="n">flow_directions</span><span class="p">),</span>
+        <span class="n">from_pysheds</span><span class="p">(</span><span class="n">flow_accumulation</span><span class="p">),</span>
+    <span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="streamkit.watershed.delineate_subbasins" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">watershed</span><span class="o">.</span><span class="n">delineate_subbasins</span><span class="p">(</span><span class="n">stream_raster</span><span class="p">,</span> <span class="n">flow_directions</span><span class="p">,</span> <span class="n">flow_accumulation</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Delineate all subbasins given a channel network raster. Detects pour points
+for each unique stream segment by finding the cell with the highest flow
+accumulation for that segment (based on ID).</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>stream_raster</code>
+            </td>
+            <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Raster of channel network with unique IDs for each
+segment</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>flow_directions</code>
+            </td>
+            <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Flow directions raster (ESRI d8 encoding)</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>flow_accumulation</code>
+            </td>
+            <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Flow accumulation raster</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+        <p>Returns:
+    Raster of subbasins with same IDs as stream_raster</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>streamkit/watershed.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">delineate_subbasins</span><span class="p">(</span>
+    <span class="n">stream_raster</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">,</span>
+    <span class="n">flow_directions</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">,</span>
+    <span class="n">flow_accumulation</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Delineate all subbasins given a channel network raster. Detects pour points</span>
+<span class="sd">    for each unique stream segment by finding the cell with the highest flow</span>
+<span class="sd">    accumulation for that segment (based on ID).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        stream_raster: Raster of channel network with unique IDs for each</span>
+<span class="sd">            segment</span>
+<span class="sd">        flow_directions: Flow directions raster (ESRI d8 encoding)</span>
+<span class="sd">        flow_accumulation: Flow accumulation raster</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        Raster of subbasins with same IDs as stream_raster</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># get pour points from channel network raster</span>
+    <span class="c1"># these are sorted so that nested basins are handled correctly</span>
+    <span class="n">pour_points</span> <span class="o">=</span> <span class="n">_identify_pour_points</span><span class="p">(</span><span class="n">stream_raster</span><span class="p">,</span> <span class="n">flow_accumulation</span><span class="p">)</span>
+
+    <span class="n">subbasins</span> <span class="o">=</span> <span class="n">stream_raster</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">stream_raster</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">pysheds_fdir</span><span class="p">,</span> <span class="n">grid</span> <span class="o">=</span> <span class="n">to_pysheds</span><span class="p">(</span><span class="n">flow_directions</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">pour_points</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">pour_row</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;row&quot;</span><span class="p">]</span>
+        <span class="n">pour_col</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;col&quot;</span><span class="p">]</span>
+
+        <span class="n">catchment</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">catchment</span><span class="p">(</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">pour_col</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="n">pour_row</span><span class="p">,</span>
+            <span class="n">fdir</span><span class="o">=</span><span class="n">pysheds_fdir</span><span class="p">,</span>
+            <span class="n">xytype</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">subbasins</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">catchment</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;stream_value&quot;</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">subbasins</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="stream-vectorization-and-network-conversion">Stream Vectorization and Network Conversion</h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="streamkit.vectorize_streams.vectorize_streams" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">vectorize_streams</span><span class="o">.</span><span class="n">vectorize_streams</span><span class="p">(</span><span class="n">stream_raster</span><span class="p">,</span> <span class="n">flow_directions</span><span class="p">,</span> <span class="n">flow_accumulation</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Vectorize streams from a raster to a GeoDataFrame of LineStrings.
+Args:
+    stream_raster: A raster of stream segments with unique IDs.
+    flow_directions: A raster of flow directions (ESRI D8 encoding).
+    flow_accumulation: A raster of flow accumulation values.
+Returns:
+    A GeoDataFrame with LineString geometries representing the streams with stream_id column (from the raster values).</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>streamkit/vectorize_streams.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">vectorize_streams</span><span class="p">(</span>
+    <span class="n">stream_raster</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">,</span>
+    <span class="n">flow_directions</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">,</span>
+    <span class="n">flow_accumulation</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Vectorize streams from a raster to a GeoDataFrame of LineStrings.</span>
+<span class="sd">    Args:</span>
+<span class="sd">        stream_raster: A raster of stream segments with unique IDs.</span>
+<span class="sd">        flow_directions: A raster of flow directions (ESRI D8 encoding).</span>
+<span class="sd">        flow_accumulation: A raster of flow accumulation values.</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        A GeoDataFrame with LineString geometries representing the streams with stream_id column (from the raster values).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">flowlines</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">stream_id</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">stream_raster</span><span class="o">.</span><span class="n">values</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">stream_id</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">stream_id</span><span class="p">):</span>
+            <span class="k">continue</span>
+
+        <span class="n">stream_mask</span> <span class="o">=</span> <span class="n">stream_raster</span> <span class="o">==</span> <span class="n">stream_id</span>
+        <span class="n">flow_acc</span> <span class="o">=</span> <span class="n">flow_accumulation</span> <span class="o">*</span> <span class="n">stream_mask</span><span class="o">.</span><span class="n">data</span>
+        <span class="n">flow_dir</span> <span class="o">=</span> <span class="n">flow_directions</span> <span class="o">*</span> <span class="n">stream_mask</span><span class="o">.</span><span class="n">data</span>
+
+        <span class="c1"># skip any empty streams or those with one cell</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">stream_mask</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">line</span> <span class="o">=</span> <span class="n">_vectorize_single_stream</span><span class="p">(</span><span class="n">stream_mask</span><span class="p">,</span> <span class="n">flow_dir</span><span class="p">,</span> <span class="n">flow_acc</span><span class="p">)</span>
+        <span class="n">flowlines</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="n">line</span><span class="p">,</span> <span class="s2">&quot;stream_id&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">stream_id</span><span class="p">)})</span>
+
+    <span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">flowlines</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">stream_raster</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">gdf</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="streamkit.nx_convert.vector_streams_to_networkx" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">nx_convert</span><span class="o">.</span><span class="n">vector_streams_to_networkx</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Convert a GeoDataFrame of LineString geometries to a NetworkX directed graph.</p>
+<p>Creates a directed graph where nodes represent stream endpoints (start and end
+coordinates) and edges represent stream segments. All attributes from the input
+GeoDataFrame are preserved as edge attributes in the graph.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>lines</code>
+            </td>
+            <td>
+                  <code><span title="geopandas.GeoDataFrame">GeoDataFrame</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>GeoDataFrame containing LineString geometries representing stream
+segments, along with any associated attributes.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="networkx.DiGraph">DiGraph</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A directed graph where edges contain the original geometry, CRS, and all other attributes from the input GeoDataFrame.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>streamkit/nx_convert.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">vector_streams_to_networkx</span><span class="p">(</span><span class="n">lines</span><span class="p">:</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a GeoDataFrame of LineString geometries to a NetworkX directed graph.</span>
+
+<span class="sd">    Creates a directed graph where nodes represent stream endpoints (start and end</span>
+<span class="sd">    coordinates) and edges represent stream segments. All attributes from the input</span>
+<span class="sd">    GeoDataFrame are preserved as edge attributes in the graph.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        lines: GeoDataFrame containing LineString geometries representing stream</span>
+<span class="sd">            segments, along with any associated attributes.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A directed graph where edges contain the original geometry, CRS, and all other attributes from the input GeoDataFrame.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span>
+            <span class="n">start</span><span class="p">,</span>
+            <span class="n">end</span><span class="p">,</span>
+            <span class="n">crs</span><span class="o">=</span><span class="n">lines</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span>
+            <span class="n">geometry</span><span class="o">=</span><span class="n">line</span><span class="o">.</span><span class="n">geometry</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">line</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;geometry&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">G</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="streamkit.nx_convert.networkx_to_gdf" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">nx_convert</span><span class="o">.</span><span class="n">networkx_to_gdf</span><span class="p">(</span><span class="n">G</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Convert a NetworkX directed graph back to a GeoDataFrame.</p>
+<p>Reconstructs vector stream data from a graph representation by converting
+each edge into a LineString geometry connecting its start and end nodes.
+All edge attributes are preserved in the output GeoDataFrame.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>G</code>
+            </td>
+            <td>
+                  <code><span title="networkx.DiGraph">DiGraph</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A directed graph representing stream networks. Edges must contain
+'crs' and 'geometry' attributes, typically created by
+vector_streams_to_networkx().</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="geopandas.GeoDataFrame">GeoDataFrame</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A GeoDataFrame with LineString geometries representing stream segments and all edge attributes from the graph (excluding the 'crs' attribute which is set as the GeoDataFrame's CRS).</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>streamkit/nx_convert.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">networkx_to_gdf</span><span class="p">(</span><span class="n">G</span><span class="p">:</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert a NetworkX directed graph back to a GeoDataFrame.</span>
+
+<span class="sd">    Reconstructs vector stream data from a graph representation by converting</span>
+<span class="sd">    each edge into a LineString geometry connecting its start and end nodes.</span>
+<span class="sd">    All edge attributes are preserved in the output GeoDataFrame.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        G: A directed graph representing stream networks. Edges must contain</span>
+<span class="sd">            &#39;crs&#39; and &#39;geometry&#39; attributes, typically created by</span>
+<span class="sd">            vector_streams_to_networkx().</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A GeoDataFrame with LineString geometries representing stream segments and all edge attributes from the graph (excluding the &#39;crs&#39; attribute which is set as the GeoDataFrame&#39;s CRS).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">edges</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">([</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span><span class="o">.</span><span class="n">unary_union</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">data</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+    <span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">edges</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="s2">&quot;geometry&quot;</span><span class="p">)</span>
+    <span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">set_crs</span><span class="p">(</span><span class="n">gdf</span><span class="p">[</span><span class="s2">&quot;crs&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">gdf</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;crs&quot;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">gdf</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="network-analysis">Network Analysis</h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="streamkit.strahler.strahler_order" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">strahler</span><span class="o">.</span><span class="n">strahler_order</span><span class="p">(</span><span class="n">G</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Calculate the Strahler order for each edge in a directed graph.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>G</code>
+            </td>
+            <td>
+                  <code><span title="networkx.DiGraph">DiGraph</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A directed graph representing a river network. Use 'vector_streams_to_networkx()' to create this from vector data.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+        <p>Returns:
+    The same directed graph with an additional 'strahler' attribute on each edge indicating its Strahler order.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>streamkit/strahler.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">strahler_order</span><span class="p">(</span><span class="n">G</span><span class="p">:</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the Strahler order for each edge in a directed graph.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        G: A directed graph representing a river network. Use &#39;vector_streams_to_networkx()&#39; to create this from vector data.</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        The same directed graph with an additional &#39;strahler&#39; attribute on each edge indicating its Strahler order.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># first, find all root nodes</span>
+    <span class="c1"># then, for each subgraph, find the strahler order of each edge</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">roots</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">out_degree</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">root</span> <span class="ow">in</span> <span class="n">roots</span><span class="p">:</span>
+        <span class="n">_calculate_strahler</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">G</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="streamkit.upstream_length.upstream_length" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">upstream_length</span><span class="o">.</span><span class="n">upstream_length</span><span class="p">(</span><span class="n">G</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Compute the maximum upstream length for each edge in a directed graph G. Uses the length attribute of the edge geometry.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>G</code>
+            </td>
+            <td>
+                  <code><span title="networkx.DiGraph">DiGraph</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A directed graph where edges have a 'geometry' attribute (shapely LineString).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+        <p>Returns:
+    A copy of the graph with an additional attribute 'max_upstream_length' for each edge.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>streamkit/upstream_length.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">upstream_length</span><span class="p">(</span><span class="n">G</span><span class="p">:</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the maximum upstream length for each edge in a directed graph G. Uses the length attribute of the edge geometry.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        G: A directed graph where edges have a &#39;geometry&#39; attribute (shapely LineString).</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        A copy of the graph with an additional attribute &#39;max_upstream_length&#39; for each edge.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Compute the maximum upstream length for each edge in a directed graph G.</span>
+    <span class="c1"># confirm that all edges have a &#39;geometry&#39; attribute</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="s2">&quot;geometry&quot;</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">[</span><span class="n">e</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;All edges must have a &#39;geometry&#39; attribute. Cannot compute upstream length.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="n">d</span><span class="p">[</span><span class="s2">&quot;max_upstream_length&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nx</span><span class="o">.</span><span class="n">topological_sort</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+        <span class="n">upstream</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">in_edges</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">upstream</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># this is headwater, set length to the length of the edge.geometry</span>
+            <span class="n">out_edges</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">out_edges</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">out_edges</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">out_data</span> <span class="o">=</span> <span class="n">out_edges</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">length</span> <span class="o">=</span> <span class="n">out_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;geometry&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">length</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">upstream</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">upstream</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">length</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;max_upstream_length&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;geometry&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">length</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">max_upstream_length</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">upstream</span><span class="p">:</span>
+                <span class="n">upstream_length</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;max_upstream_length&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;geometry&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">length</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="n">upstream_length</span> <span class="o">&gt;</span> <span class="n">max_upstream_length</span><span class="p">:</span>
+                    <span class="n">max_upstream_length</span> <span class="o">=</span> <span class="n">upstream_length</span>
+            <span class="n">length</span> <span class="o">=</span> <span class="n">max_upstream_length</span>
+
+        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">out_data</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">out_edges</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="n">out_data</span><span class="p">[</span><span class="s2">&quot;max_upstream_length&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">length</span>
+    <span class="k">return</span> <span class="n">G</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="streamkit.mainstem.label_mainstem" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">mainstem</span><span class="o">.</span><span class="n">label_mainstem</span><span class="p">(</span><span class="n">G</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Label mainstem edges in a stream network graph.</p>
+<p>Identifies and labels the main channel (mainstem) of each drainage network
+by traversing from outlet nodes upstream. Edges are labeled with a 'mainstem'
+attribute set to True for mainstem edges and False for tributaries.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>G</code>
+            </td>
+            <td>
+                  <code><span title="networkx.DiGraph">DiGraph</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A directed graph representing a stream network. Each edge must have
+'strahler' and 'max_upstream_length' attributes. If these are missing,
+run strahler_order() and upstream_length() first.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="networkx.DiGraph">DiGraph</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A copy of the input graph with edges labeled with a 'mainstem' boolean attribute indicating whether each edge is part of the main channel.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="ValueError">ValueError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If any edge is missing the required 'strahler' or
+'max_upstream_length' attributes.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>streamkit/mainstem.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">label_mainstem</span><span class="p">(</span><span class="n">G</span><span class="p">:</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Label mainstem edges in a stream network graph.</span>
+
+<span class="sd">    Identifies and labels the main channel (mainstem) of each drainage network</span>
+<span class="sd">    by traversing from outlet nodes upstream. Edges are labeled with a &#39;mainstem&#39;</span>
+<span class="sd">    attribute set to True for mainstem edges and False for tributaries.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        G: A directed graph representing a stream network. Each edge must have</span>
+<span class="sd">            &#39;strahler&#39; and &#39;max_upstream_length&#39; attributes. If these are missing,</span>
+<span class="sd">            run strahler_order() and upstream_length() first.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A copy of the input graph with edges labeled with a &#39;mainstem&#39; boolean attribute indicating whether each edge is part of the main channel.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: If any edge is missing the required &#39;strahler&#39; or</span>
+<span class="sd">            &#39;max_upstream_length&#39; attributes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># make sure that edges have a &#39;strahler&#39; attribute</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="s2">&quot;strahler&quot;</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">[</span><span class="n">e</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;All edges must have a &#39;strahler&#39; attribute. Run strahler_order() first.&quot;</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="s2">&quot;max_upstream_length&quot;</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">[</span><span class="n">e</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;All edges must have a &#39;max_upstream_length&#39; attribute. Run upstream_length() first.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="c1"># initialize all edges as not mainstem_edge</span>
+    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">:</span>
+        <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">[</span><span class="n">e</span><span class="p">][</span><span class="s2">&quot;mainstem&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="n">roots</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">out_degree</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">root</span> <span class="ow">in</span> <span class="n">roots</span><span class="p">:</span>
+        <span class="n">_label_mainstem</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">G</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="streamkit.xs.network_cross_sections" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">xs</span><span class="o">.</span><span class="n">network_cross_sections</span><span class="p">(</span><span class="n">linestrings</span><span class="p">,</span> <span class="n">interval_distance</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">linestring_ids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">smoothed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Create cross-sections at regular intervals along linestrings.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>linestrings</code>
+            </td>
+            <td>
+                  <code><span title="geopandas.GeoSeries">GeoSeries</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Linestring geometries.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>interval_distance</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Distance between cross-sections along the linestrings.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>width</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Width of each cross-section.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>linestring_ids</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="typing.Sequence">Sequence</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional identifiers for each linestring. If None, the index of linestrings is used.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>smoothed</code>
+            </td>
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Whether to use smoothed angles for cross-sections.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+        <p>Returns:
+    cross section linestrings</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>streamkit/xs.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">network_cross_sections</span><span class="p">(</span>
+    <span class="n">linestrings</span><span class="p">:</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">,</span>
+    <span class="n">interval_distance</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">width</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">linestring_ids</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Sequence</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">smoothed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create cross-sections at regular intervals along linestrings.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        linestrings: Linestring geometries.</span>
+<span class="sd">        interval_distance: Distance between cross-sections along the linestrings.</span>
+<span class="sd">        width: Width of each cross-section.</span>
+<span class="sd">        linestring_ids: Optional identifiers for each linestring. If None, the index of linestrings is used.</span>
+<span class="sd">        smoothed: Whether to use smoothed angles for cross-sections.</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        cross section linestrings</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">linestring_ids</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">linestring_ids</span> <span class="o">=</span> <span class="n">linestrings</span><span class="o">.</span><span class="n">index</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">linestring_ids</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">linestrings</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;provided ids must match the length of linestrings&quot;</span><span class="p">)</span>
+
+    <span class="n">xsections</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">cid</span><span class="p">,</span> <span class="n">linestring</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">linestring_ids</span><span class="p">,</span> <span class="n">linestrings</span><span class="p">):</span>
+        <span class="n">channel_xsections</span> <span class="o">=</span> <span class="n">_create_cross_sections</span><span class="p">(</span>
+            <span class="n">linestring</span><span class="p">,</span> <span class="n">interval_distance</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">linestrings</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span> <span class="n">smoothed</span><span class="o">=</span><span class="n">smoothed</span>
+        <span class="p">)</span>
+        <span class="c1"># convert to DataFrame and add segment_id</span>
+        <span class="n">channel_xsections</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span>
+            <span class="n">geometry</span><span class="o">=</span><span class="n">channel_xsections</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">linestrings</span><span class="o">.</span><span class="n">crs</span>
+        <span class="p">)</span>
+        <span class="n">channel_xsections</span><span class="p">[</span><span class="s2">&quot;linestring_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cid</span>
+        <span class="n">xsections</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">channel_xsections</span><span class="p">)</span>
+    <span class="n">xsections</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">xsections</span><span class="p">)</span>
+    <span class="n">xsections</span><span class="p">[</span><span class="s2">&quot;xs_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">xsections</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">xsections</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="streamkit.profile.sample_cross_sections" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">profile</span><span class="o">.</span><span class="n">sample_cross_sections</span><span class="p">(</span><span class="n">xs_linestrings</span><span class="p">,</span> <span class="n">point_interval</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Generate profile points along cross-section linestrings at regular intervals.</p>
+<p>Creates evenly-spaced points along each cross-section line, measuring distances
+from the center point. Points are labeled as 'center', 'positive' (downstream
+of center), or 'negative' (upstream of center).</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>xs_linestrings</code>
+            </td>
+            <td>
+                  <code><span title="geopandas.GeoDataFrame">GeoDataFrame</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>GeoDataFrame containing LineString geometries representing
+cross-sections. If 'xs_id' column is not present, sequential IDs will
+be automatically assigned.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>point_interval</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Spacing between points along each cross-section, in the
+units of the GeoDataFrame's CRS.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="geopandas.GeoDataFrame">GeoDataFrame</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A GeoDataFrame with Point geometries containing columns:
+- xs_id: Cross-section identifier
+- side: Position relative to center ('center', 'positive', 'negative')
+- distance: Distance from center point (negative for upstream, positive
+  for downstream)
+- geometry: Point geometry
+- Additional columns from input xs_linestrings are preserved</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>streamkit/profile.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">sample_cross_sections</span><span class="p">(</span>
+    <span class="n">xs_linestrings</span><span class="p">:</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">,</span> <span class="n">point_interval</span><span class="p">:</span> <span class="nb">float</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate profile points along cross-section linestrings at regular intervals.</span>
+
+<span class="sd">    Creates evenly-spaced points along each cross-section line, measuring distances</span>
+<span class="sd">    from the center point. Points are labeled as &#39;center&#39;, &#39;positive&#39; (downstream</span>
+<span class="sd">    of center), or &#39;negative&#39; (upstream of center).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        xs_linestrings: GeoDataFrame containing LineString geometries representing</span>
+<span class="sd">            cross-sections. If &#39;xs_id&#39; column is not present, sequential IDs will</span>
+<span class="sd">            be automatically assigned.</span>
+<span class="sd">        point_interval: Spacing between points along each cross-section, in the</span>
+<span class="sd">            units of the GeoDataFrame&#39;s CRS.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A GeoDataFrame with Point geometries containing columns:</span>
+<span class="sd">            - xs_id: Cross-section identifier</span>
+<span class="sd">            - side: Position relative to center (&#39;center&#39;, &#39;positive&#39;, &#39;negative&#39;)</span>
+<span class="sd">            - distance: Distance from center point (negative for upstream, positive</span>
+<span class="sd">              for downstream)</span>
+<span class="sd">            - geometry: Point geometry</span>
+<span class="sd">            - Additional columns from input xs_linestrings are preserved</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="s2">&quot;xs_id&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">xs_linestrings</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">xs_linestrings</span><span class="p">[</span><span class="s2">&quot;xs_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">xs_linestrings</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">xs_points</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">xs_id</span><span class="p">,</span> <span class="n">xs_linestring</span> <span class="ow">in</span> <span class="n">xs_linestrings</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;xs_id&quot;</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">linestring</span> <span class="ow">in</span> <span class="n">xs_linestring</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+            <span class="n">points</span> <span class="o">=</span> <span class="n">_points_along_linestring</span><span class="p">(</span>
+                <span class="n">linestring</span><span class="o">.</span><span class="n">geometry</span><span class="p">,</span> <span class="n">point_interval</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">xs_linestrings</span><span class="o">.</span><span class="n">crs</span>
+            <span class="p">)</span>
+            <span class="n">points</span><span class="p">[</span><span class="s2">&quot;xs_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">xs_id</span>
+            <span class="c1"># add other columns from xs_linestrings</span>
+            <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">xs_linestring</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">col</span> <span class="o">!=</span> <span class="s2">&quot;geometry&quot;</span><span class="p">:</span>
+                    <span class="n">points</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">linestring</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
+            <span class="n">xs_points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span>
+        <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">xs_points</span><span class="p">),</span> <span class="n">crs</span><span class="o">=</span><span class="n">xs_linestrings</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="s2">&quot;geometry&quot;</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="terrain-analysis">Terrain Analysis</h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="streamkit.smooth.gaussian_smooth_raster" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">smooth</span><span class="o">.</span><span class="n">gaussian_smooth_raster</span><span class="p">(</span><span class="n">raster</span><span class="p">,</span> <span class="n">spatial_radius</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Apply Gaussian smoothing to a raster while preserving NaN values.</p>
+<p>Performs NaN-aware Gaussian filtering that conserves intensity by only
+redistributing values between non-NaN pixels. NaN pixels remain NaN in
+the output.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>raster</code>
+            </td>
+            <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Input raster to smooth.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>spatial_radius</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Radius of the Gaussian kernel in map units (e.g., meters).
+Converted internally to pixels based on raster resolution.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>sigma</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Standard deviation of the Gaussian kernel in pixels. Controls
+the strength of smoothing.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Smoothed raster with the same dimensions, coordinates, and NaN pattern as the input.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>streamkit/smooth.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">gaussian_smooth_raster</span><span class="p">(</span>
+    <span class="n">raster</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">,</span> <span class="n">spatial_radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">sigma</span><span class="p">:</span> <span class="nb">float</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Apply Gaussian smoothing to a raster while preserving NaN values.</span>
+
+<span class="sd">    Performs NaN-aware Gaussian filtering that conserves intensity by only</span>
+<span class="sd">    redistributing values between non-NaN pixels. NaN pixels remain NaN in</span>
+<span class="sd">    the output.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        raster: Input raster to smooth.</span>
+<span class="sd">        spatial_radius: Radius of the Gaussian kernel in map units (e.g., meters).</span>
+<span class="sd">            Converted internally to pixels based on raster resolution.</span>
+<span class="sd">        sigma: Standard deviation of the Gaussian kernel in pixels. Controls</span>
+<span class="sd">            the strength of smoothing.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Smoothed raster with the same dimensions, coordinates, and NaN pattern as the input.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">resolution</span> <span class="o">=</span> <span class="n">raster</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">resolution</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">radius_pixels</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">spatial_radius</span> <span class="o">/</span> <span class="n">resolution</span><span class="p">))</span>
+
+    <span class="n">raster_copy</span> <span class="o">=</span> <span class="n">raster</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">raster_copy</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">_filter_nan_gaussian_conserving</span><span class="p">(</span>
+        <span class="n">raster_copy</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">radius_pixels</span><span class="p">,</span> <span class="n">sigma</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">raster_copy</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="streamkit.upstream_length.upstream_length_raster" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">upstream_length</span><span class="o">.</span><span class="n">upstream_length_raster</span><span class="p">(</span><span class="n">streams</span><span class="p">,</span> <span class="n">flow_direction</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>For each cell in the stream raster, compute the maximum upstream length</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>streams</code>
+            </td>
+            <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A binary raster where stream cells are 1 and non-stream cells are 0.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>flow_direction</code>
+            </td>
+            <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A raster representing flow direction using ESRI convention.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+        <p>Returns:
+    A raster where each stream cell contains the maximum upstream length in map units.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>streamkit/upstream_length.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">upstream_length_raster</span><span class="p">(</span>
+    <span class="n">streams</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">,</span> <span class="n">flow_direction</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    For each cell in the stream raster, compute the maximum upstream length</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        streams: A binary raster where stream cells are 1 and non-stream cells are 0.</span>
+<span class="sd">        flow_direction: A raster representing flow direction using ESRI convention.</span>
+<span class="sd">    Returns:</span>
+<span class="sd">        A raster where each stream cell contains the maximum upstream length in map units.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">dirmap</span> <span class="o">=</span> <span class="n">_make_numba_esri_dirmap</span><span class="p">()</span>
+    <span class="n">sources</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">find_stream_nodes</span><span class="p">(</span><span class="n">streams</span><span class="p">,</span> <span class="n">flow_direction</span><span class="p">)</span>
+    <span class="n">distance_arr</span> <span class="o">=</span> <span class="n">_distance_from_head</span><span class="p">(</span>
+        <span class="n">streams</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">sources</span><span class="p">,</span> <span class="n">flow_direction</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">dirmap</span>
+    <span class="p">)</span>
+    <span class="n">distance_raster</span> <span class="o">=</span> <span class="n">flow_direction</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">distance_arr</span><span class="p">)</span>
+    <span class="n">distance_raster</span> <span class="o">*=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">flow_direction</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">resolution</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">distance_raster</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="reach-delineation">Reach Delineation</h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="streamkit.reach.delineate_reaches" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">reach</span><span class="o">.</span><span class="n">delineate_reaches</span><span class="p">(</span><span class="n">stream_raster</span><span class="p">,</span> <span class="n">dem</span><span class="p">,</span> <span class="n">penalty</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">smooth_window</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">threshold_degrees</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Segment stream networks into reaches based on slope change points.</p>
+<p>Uses the PELT (Pruned Exact Linear Time) changepoint detection algorithm
+to identify distinct reaches along each stream based on slope variations.
+Adjacent reaches with similar slopes can be merged using the threshold parameter.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>stream_raster</code>
+            </td>
+            <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Labeled stream network where each unique value represents
+a stream segment (0 for non-stream pixels).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>dem</code>
+            </td>
+            <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Digital elevation model for slope calculations.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>penalty</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>PELT algorithm penalty parameter. If None, automatically calculated
+as log(n) * variance of slope signal.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>min_length</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Minimum reach length in meters.</p>
+              </div>
+            </td>
+            <td>
+                  <code>500</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>smooth_window</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Window size for smoothing slope values before segmentation.
+If None, no smoothing is applied.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>threshold_degrees</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Merge adjacent reaches if slope difference is below this
+threshold in degrees.</p>
+              </div>
+            </td>
+            <td>
+                  <code>1.0</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A raster where each pixel value represents a unique reach ID (0 for non-stream pixels). Reach IDs are computed as reach_number + stream_id * 1000.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>streamkit/reach.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">delineate_reaches</span><span class="p">(</span>
+    <span class="n">stream_raster</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">,</span>
+    <span class="n">dem</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">,</span>
+    <span class="n">penalty</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">min_length</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span>
+    <span class="n">smooth_window</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">threshold_degrees</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Segment stream networks into reaches based on slope change points.</span>
+
+<span class="sd">    Uses the PELT (Pruned Exact Linear Time) changepoint detection algorithm</span>
+<span class="sd">    to identify distinct reaches along each stream based on slope variations.</span>
+<span class="sd">    Adjacent reaches with similar slopes can be merged using the threshold parameter.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        stream_raster: Labeled stream network where each unique value represents</span>
+<span class="sd">            a stream segment (0 for non-stream pixels).</span>
+<span class="sd">        dem: Digital elevation model for slope calculations.</span>
+<span class="sd">        penalty: PELT algorithm penalty parameter. If None, automatically calculated</span>
+<span class="sd">            as log(n) * variance of slope signal.</span>
+<span class="sd">        min_length: Minimum reach length in meters.</span>
+<span class="sd">        smooth_window: Window size for smoothing slope values before segmentation.</span>
+<span class="sd">            If None, no smoothing is applied.</span>
+<span class="sd">        threshold_degrees: Merge adjacent reaches if slope difference is below this</span>
+<span class="sd">            threshold in degrees.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A raster where each pixel value represents a unique reach ID (0 for non-stream pixels). Reach IDs are computed as reach_number + stream_id * 1000.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_</span><span class="p">,</span> <span class="n">flow_dir</span><span class="p">,</span> <span class="n">flow_acc</span> <span class="o">=</span> <span class="n">flow_accumulation_workflow</span><span class="p">(</span><span class="n">dem</span><span class="p">)</span>
+
+    <span class="n">reaches</span> <span class="o">=</span> <span class="n">stream_raster</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">stream_raster</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">stream_val</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">stream_raster</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">stream_val</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">stream_val</span><span class="p">):</span>
+            <span class="k">continue</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">stream_df</span> <span class="o">=</span> <span class="n">_create_stream_points</span><span class="p">(</span>
+                <span class="n">stream_raster</span> <span class="o">==</span> <span class="n">stream_val</span><span class="p">,</span> <span class="n">flow_dir</span><span class="p">,</span> <span class="n">flow_acc</span><span class="p">,</span> <span class="n">dem</span>
+            <span class="p">)</span>
+            <span class="c1"># roughly convert min_length in meters to number of points</span>
+            <span class="n">min_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">min_length</span> <span class="o">/</span> <span class="n">flow_dir</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">resolution</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">stream_df</span> <span class="o">=</span> <span class="n">_pelt_reaches</span><span class="p">(</span>
+                <span class="n">stream_df</span><span class="p">,</span>
+                <span class="n">penalty</span><span class="o">=</span><span class="n">penalty</span><span class="p">,</span>
+                <span class="n">min_size</span><span class="o">=</span><span class="n">min_size</span><span class="p">,</span>
+                <span class="n">smooth_window</span><span class="o">=</span><span class="n">smooth_window</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">stream_df</span> <span class="o">=</span> <span class="n">_merge_reaches_by_threshold</span><span class="p">(</span>
+                <span class="n">stream_df</span><span class="p">,</span> <span class="n">threshold_degrees</span><span class="o">=</span><span class="n">threshold_degrees</span>
+            <span class="p">)</span>
+            <span class="n">stream_df</span><span class="p">[</span><span class="s2">&quot;reach_val&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stream_df</span><span class="p">[</span><span class="s2">&quot;reach_id&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">stream_val</span> <span class="o">*</span> <span class="mi">1000</span>
+            <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">stream_df</span><span class="p">[</span><span class="s2">&quot;row&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">stream_df</span><span class="p">[</span><span class="s2">&quot;col&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+            <span class="n">reaches</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">stream_df</span><span class="p">[</span><span class="s2">&quot;reach_val&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="k">return</span> <span class="n">reaches</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="data-download-utilities">Data Download Utilities</h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="streamkit.data.get_huc_data" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get_huc_data</span><span class="p">(</span><span class="n">hucid</span><span class="p">,</span> <span class="n">nhd_layer</span><span class="o">=</span><span class="s1">&#39;flowline_mr&#39;</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">,</span> <span class="n">dem_resolution</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">wbd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nhd</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Download hydrological and topographic data for a given HUC ID.</p>
+<p>Retrieves NHD flowlines, and digital elevation model (DEM) data for the
+specified Hydrologic Unit Code (HUC) area.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>hucid</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The Hydrologic Unit Code identifier for the watershed area.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>nhd_layer</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The National Hydrography Dataset layer name for flowlines.
+Defaults to "flowline_mr" (medium resolution).</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;flowline_mr&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>crs</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The coordinate reference system for the output data as an EPSG code
+or other CRS string. Defaults to "EPSG:4326" (WGS84).</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;EPSG:4326&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>dem_resolution</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The spatial resolution of the DEM in meters. Defaults to 10.</p>
+              </div>
+            </td>
+            <td>
+                  <code>10</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>wbd</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="pygeohydro.WBD">WBD</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>An existing Watershed Boundary Dataset object. If None, a new WBD
+instance will be created.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>nhd</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="pynhd.NHD">NHD</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>An existing National Hydrography Dataset object. If None, a new NHD
+instance will be created.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code>flowlines gdf, dem raster</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>streamkit/data.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_huc_data</span><span class="p">(</span>
+    <span class="n">hucid</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">nhd_layer</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;flowline_mr&quot;</span><span class="p">,</span>
+    <span class="n">crs</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;EPSG:4326&quot;</span><span class="p">,</span>
+    <span class="n">dem_resolution</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="n">wbd</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">WBD</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">nhd</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">NHD</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">,</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Download hydrological and topographic data for a given HUC ID.</span>
+
+<span class="sd">    Retrieves NHD flowlines, and digital elevation model (DEM) data for the</span>
+<span class="sd">    specified Hydrologic Unit Code (HUC) area.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        hucid: The Hydrologic Unit Code identifier for the watershed area.</span>
+<span class="sd">        nhd_layer: The National Hydrography Dataset layer name for flowlines.</span>
+<span class="sd">            Defaults to &quot;flowline_mr&quot; (medium resolution).</span>
+<span class="sd">        crs: The coordinate reference system for the output data as an EPSG code</span>
+<span class="sd">            or other CRS string. Defaults to &quot;EPSG:4326&quot; (WGS84).</span>
+<span class="sd">        dem_resolution: The spatial resolution of the DEM in meters. Defaults to 10.</span>
+<span class="sd">        wbd: An existing Watershed Boundary Dataset object. If None, a new WBD</span>
+<span class="sd">            instance will be created.</span>
+<span class="sd">        nhd: An existing National Hydrography Dataset object. If None, a new NHD</span>
+<span class="sd">            instance will be created.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        (flowlines gdf, dem raster):</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">huc_bounds</span> <span class="o">=</span> <span class="n">download_huc_bounds</span><span class="p">(</span><span class="n">hucid</span><span class="p">,</span> <span class="n">wbd</span><span class="p">)</span>
+    <span class="n">flowlines</span> <span class="o">=</span> <span class="n">download_flowlines</span><span class="p">(</span><span class="n">huc_bounds</span><span class="p">,</span> <span class="n">nhd</span><span class="p">,</span> <span class="n">nhd_layer</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="n">crs</span><span class="p">)</span>
+    <span class="n">dem</span> <span class="o">=</span> <span class="n">download_dem</span><span class="p">(</span><span class="n">huc_bounds</span><span class="p">,</span> <span class="n">dem_resolution</span><span class="p">,</span> <span class="n">crs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">flowlines</span><span class="p">,</span> <span class="n">dem</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="streamkit.data.download_huc_bounds" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">download_huc_bounds</span><span class="p">(</span><span class="n">huc</span><span class="p">,</span> <span class="n">wbd</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+
+            <details class="quote">
+              <summary>Source code in <code>streamkit/data.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">download_huc_bounds</span><span class="p">(</span><span class="n">huc</span><span class="p">,</span> <span class="n">wbd</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">huc</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">huc</span><span class="p">)</span>
+    <span class="n">level</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;huc</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">huc</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">if</span> <span class="n">wbd</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">wbd</span> <span class="o">=</span> <span class="n">WBD</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>
+
+    <span class="n">huc_wbd</span> <span class="o">=</span> <span class="n">wbd</span><span class="o">.</span><span class="n">byids</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">huc</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">huc_wbd</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="streamkit.data.download_flowlines" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">download_flowlines</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="n">nhd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="s1">&#39;flowline_mr&#39;</span><span class="p">,</span> <span class="n">linestring_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+
+            <details class="quote">
+              <summary>Source code in <code>streamkit/data.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">download_flowlines</span><span class="p">(</span>
+    <span class="n">gdf</span><span class="p">,</span> <span class="n">nhd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;flowline_mr&quot;</span><span class="p">,</span> <span class="n">linestring_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span>
+<span class="p">):</span>
+    <span class="k">if</span> <span class="n">nhd</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">nhd</span> <span class="o">=</span> <span class="n">NHD</span><span class="p">(</span><span class="n">layer</span><span class="p">)</span>
+
+    <span class="n">boundary</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">union_all</span><span class="p">()</span>
+    <span class="n">flowlines</span> <span class="o">=</span> <span class="n">nhd</span><span class="o">.</span><span class="n">bygeom</span><span class="p">(</span><span class="n">boundary</span><span class="p">)</span>
+    <span class="n">flowlines</span> <span class="o">=</span> <span class="n">flowlines</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">boundary</span><span class="p">)</span>
+    <span class="n">flowlines</span> <span class="o">=</span> <span class="n">flowlines</span><span class="o">.</span><span class="n">explode</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">linestring_only</span><span class="p">:</span>
+        <span class="n">flowlines</span> <span class="o">=</span> <span class="n">flowlines</span><span class="p">[</span><span class="n">flowlines</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s2">&quot;LineString&quot;</span><span class="p">]</span>
+
+    <span class="n">flowlines</span> <span class="o">=</span> <span class="n">flowlines</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">crs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">flowlines</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="streamkit.data.download_dem" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">download_dem</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="n">resolution</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+
+            <details class="quote">
+              <summary>Source code in <code>streamkit/data.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">download_dem</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="n">resolution</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">):</span>
+    <span class="n">boundary</span> <span class="o">=</span> <span class="n">gdf</span><span class="o">.</span><span class="n">union_all</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">dem</span> <span class="o">=</span> <span class="n">py3dep</span><span class="o">.</span><span class="n">static_3dep_dem</span><span class="p">(</span><span class="n">boundary</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="n">resolution</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">gdf</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">dem</span> <span class="o">=</span> <span class="n">retry_on_smaller</span><span class="p">(</span><span class="n">boundary</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">dem</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">crs</span> <span class="o">!=</span> <span class="n">crs</span><span class="p">:</span>
+        <span class="n">dem</span> <span class="o">=</span> <span class="n">dem</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">reproject</span><span class="p">(</span><span class="n">crs</span><span class="p">,</span> <span class="n">resampling</span><span class="o">=</span><span class="n">rasterio</span><span class="o">.</span><span class="n">enums</span><span class="o">.</span><span class="n">Resampling</span><span class="o">.</span><span class="n">bilinear</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dem</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div><h2 id="nhd-utilities">NHD Utilities</h2>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="streamkit.nhd.rasterize_nhd" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">nhd</span><span class="o">.</span><span class="n">rasterize_nhd</span><span class="p">(</span><span class="n">nhd_flowlines</span><span class="p">,</span> <span class="n">dem</span><span class="p">)</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents first">
+
+        <p>Create a raster representation of NHD flowlines traced on a DEM.</p>
+<p>Converts vector NHD flowlines to a raster stream network by identifying
+channel heads, tracing streams downslope along the DEM's flow directions,
+and linking stream segments. Small streams (&lt; 2 pixels) are removed and
+the remaining streams are relabeled with consecutive integers.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>nhd_flowlines</code>
+            </td>
+            <td>
+                  <code><span title="geopandas.GeoDataFrame">GeoDataFrame</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Vector flowline data from the National Hydrography Dataset
+containing stream geometries.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>dem</code>
+            </td>
+            <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Digital elevation model raster with spatial reference information.
+Used to determine flow directions for stream tracing.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="xarray.DataArray">DataArray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A raster DataArray where each pixel value represents a unique stream ID (0 for non-stream pixels, consecutive positive integers for stream segments).</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+            <details class="quote">
+              <summary>Source code in <code>streamkit/nhd.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">rasterize_nhd</span><span class="p">(</span><span class="n">nhd_flowlines</span><span class="p">:</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">,</span> <span class="n">dem</span><span class="p">:</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a raster representation of NHD flowlines traced on a DEM.</span>
+
+<span class="sd">    Converts vector NHD flowlines to a raster stream network by identifying</span>
+<span class="sd">    channel heads, tracing streams downslope along the DEM&#39;s flow directions,</span>
+<span class="sd">    and linking stream segments. Small streams (&lt; 2 pixels) are removed and</span>
+<span class="sd">    the remaining streams are relabeled with consecutive integers.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        nhd_flowlines: Vector flowline data from the National Hydrography Dataset</span>
+<span class="sd">            containing stream geometries.</span>
+<span class="sd">        dem: Digital elevation model raster with spatial reference information.</span>
+<span class="sd">            Used to determine flow directions for stream tracing.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A raster DataArray where each pixel value represents a unique stream ID (0 for non-stream pixels, consecutive positive integers for stream segments).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">channel_heads</span> <span class="o">=</span> <span class="n">_nhd_channel_heads</span><span class="p">(</span><span class="n">nhd_flowlines</span><span class="p">)</span>
+
+    <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="p">[(</span><span class="n">pt</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">pt</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">channel_heads</span><span class="p">])</span>
+    <span class="n">inverse</span> <span class="o">=</span> <span class="o">~</span><span class="n">dem</span><span class="o">.</span><span class="n">rio</span><span class="o">.</span><span class="n">transform</span><span class="p">()</span>
+    <span class="n">indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">inverse</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)]</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">col</span><span class="p">))</span> <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">indices</span>
+    <span class="p">]</span>  <span class="c1"># note the order of col, row...</span>
+
+    <span class="n">_</span><span class="p">,</span> <span class="n">flow_directions</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">flow_accumulation_workflow</span><span class="p">(</span><span class="n">dem</span><span class="p">)</span>
+
+    <span class="n">stream_raster</span> <span class="o">=</span> <span class="n">trace_streams</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">flow_directions</span><span class="p">)</span>
+    <span class="n">stream_raster</span> <span class="o">=</span> <span class="n">link_streams</span><span class="p">(</span><span class="n">stream_raster</span><span class="p">,</span> <span class="n">flow_directions</span><span class="p">)</span>
+
+    <span class="c1"># drop any small streams (&lt; 2 pixels)</span>
+    <span class="c1"># find all unique stream IDs where the count is &lt; 2</span>
+    <span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">stream_raster</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">small_streams</span> <span class="o">=</span> <span class="n">unique</span><span class="p">[</span><span class="n">counts</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">stream_id</span> <span class="ow">in</span> <span class="n">small_streams</span><span class="p">:</span>
+        <span class="n">stream_raster</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">stream_raster</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="n">stream_id</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># re-label streams to be consecutive integers</span>
+    <span class="n">unique</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">stream_raster</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">new_id</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">stream_id</span> <span class="ow">in</span> <span class="n">unique</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">stream_id</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">stream_raster</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">stream_raster</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="n">stream_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_id</span>
+        <span class="n">new_id</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">stream_raster</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

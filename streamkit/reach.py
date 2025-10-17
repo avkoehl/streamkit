@@ -1,5 +1,3 @@
-"""Delineate reaches from stream network"""
-
 import numpy as np
 import pandas as pd
 from rasterio.transform import xy
@@ -7,12 +5,11 @@ import ruptures as rpt
 import xarray as xr
 
 from streamkit.streamroute import route_stream
+from streamkit.watershed import flow_accumulation_workflow
 
 
 def delineate_reaches(
     stream_raster: xr.DataArray,
-    flow_dir: xr.DataArray,
-    flow_acc: xr.DataArray,
     dem: xr.DataArray,
     penalty: float | None = None,
     min_length: float = 500,
@@ -28,8 +25,6 @@ def delineate_reaches(
     Args:
         stream_raster: Labeled stream network where each unique value represents
             a stream segment (0 for non-stream pixels).
-        flow_dir: Flow direction raster (D8 format).
-        flow_acc: Flow accumulation raster.
         dem: Digital elevation model for slope calculations.
         penalty: PELT algorithm penalty parameter. If None, automatically calculated
             as log(n) * variance of slope signal.
@@ -40,9 +35,10 @@ def delineate_reaches(
             threshold in degrees.
 
     Returns:
-        A raster where each pixel value represents a unique reach ID (0 for
-        non-stream pixels). Reach IDs are computed as reach_number + stream_id * 1000.
+        A raster where each pixel value represents a unique reach ID (0 for non-stream pixels). Reach IDs are computed as reach_number + stream_id * 1000.
     """
+
+    _, flow_dir, flow_acc = flow_accumulation_workflow(dem)
 
     reaches = stream_raster.copy(data=np.zeros_like(stream_raster, dtype=np.uint32))
     for stream_val in np.unique(stream_raster):

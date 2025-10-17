@@ -14,8 +14,7 @@ def trace_streams(
         points: List of (row, col) tuples representing starting points (i.e. channel head locations).
         flow_directions: xarray DataArray of flow directions (ESRI style).
     Returns:
-        Binary strema raster where 1 indicates stream cells and 0 indicates non-stream cells.
-        Can be used as input to `streamroute.streamlink` to label individual stream segments.
+        Binary stream raster where 1 indicates stream cells and 0 indicates non-stream cells. Can be used as input to `streamroute.streamlink` to label individual stream segments.
     """
     dirmap = _make_numba_esri_dirmap()
     stream_arr = _trace_streams_numba(points, flow_directions.data, dirmap)

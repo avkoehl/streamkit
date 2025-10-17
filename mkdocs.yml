@@ -1,4 +1,7 @@
 site_name: Streamkit Documentation
+site_dir: docs
+docs_dir: docs_source
+
 theme:
   name: material
 plugins:
@@ -11,6 +14,15 @@ plugins:
             show_source: true
             show_root_heading: true
             heading_level: 2
+  - mkdocs-jupyter:
+      include_source: true
+      execute: false 
 nav:
   - Home: index.md
+  - Downloading Data: 'data.ipynb'
+  - Aligning NHD Data to DEM: 'align_nhd.ipynb'
+  - Watershed Functions: 'watershed.ipynb'
+  - Reach Delineation: 'reaches.ipynb'
+  - Stream Network Analysis: 'network.ipynb'
+  - Cross Sections: 'xs.ipynb'
   - API Reference: api.md

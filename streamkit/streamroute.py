@@ -32,7 +32,7 @@ def route_stream(
     if path[0] != start or path[-1] != end:
         raise ValueError("Traced path does not match start and end points")
 
-    stream_cells = np.argwhere(stream_mask.data > 0)
+    stream_cells = np.argwhere(stream_mask.data)
     stream_cells_set = set((row, col) for row, col in stream_cells)
     path_set = set(path)
     if stream_cells_set != path_set:
@@ -79,11 +79,11 @@ def _path_numba(row, col, flow_directions_arr, dirmap, break_conditions_arr):
     return path
 
 
-def _determine_start_and_end(stream, flow_acc):
+def _determine_start_and_end(stream_mask, flow_acc):
     """Given a mask of a single stream segment, determine the start and end points"""
     # find the stream cells with the lowest and highest flow accumulation
-    stream_cells = np.argwhere(stream.data > 0)
-    flow_acc_values = flow_acc.data[stream.data > 0]
+    stream_cells = np.argwhere(stream_mask.data)
+    flow_acc_values = flow_acc.data[stream_mask.data]
     min_idx = np.argmin(flow_acc_values)
     max_idx = np.argmax(flow_acc_values)
     start = tuple(stream_cells[min_idx])

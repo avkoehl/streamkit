@@ -17,8 +17,7 @@ def link_streams(
         flow_directions: Flow direction raster in D8 format (ESRI convention).
 
     Returns:
-        A raster where each stream segment between junctions has a unique
-        positive integer ID, with non-stream pixels as 0.
+        A raster where each stream segment between junctions has a unique positive integer ID, with non-stream pixels as 0.
     """
     dirmap = _make_numba_esri_dirmap()
     sources, confluences, _ = find_stream_nodes(stream_raster, flow_directions)

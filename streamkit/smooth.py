@@ -20,8 +20,7 @@ def gaussian_smooth_raster(
             the strength of smoothing.
 
     Returns:
-        Smoothed raster with the same dimensions, coordinates, and NaN pattern
-        as the input.
+        Smoothed raster with the same dimensions, coordinates, and NaN pattern as the input.
     """
     resolution = raster.rio.resolution()[0]
     radius_pixels = int(round(spatial_radius / resolution))

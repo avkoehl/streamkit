@@ -39,9 +39,7 @@ def get_huc_data(
             instance will be created.
 
     Returns:
-        A tuple containing:
-            - flowlines: GeoDataFrame with NHD flowline geometries and attributes.
-            - dem: DataArray with digital elevation model data for the HUC area.
+        (flowlines gdf, dem raster):
     """
 
     huc_bounds = download_huc_bounds(hucid, wbd)

@@ -15,8 +15,7 @@ def vector_streams_to_networkx(lines: gpd.GeoDataFrame) -> nx.DiGraph:
             segments, along with any associated attributes.
 
     Returns:
-        A directed graph where edges contain the original geometry, CRS, and all
-        other attributes from the input GeoDataFrame.
+        A directed graph where edges contain the original geometry, CRS, and all other attributes from the input GeoDataFrame.
     """
     G = nx.DiGraph()
     for _, line in lines.iterrows():
@@ -45,9 +44,7 @@ def networkx_to_gdf(G: nx.DiGraph) -> gpd.GeoDataFrame:
             vector_streams_to_networkx().
 
     Returns:
-        A GeoDataFrame with LineString geometries representing stream segments
-        and all edge attributes from the graph (excluding the 'crs' attribute
-        which is set as the GeoDataFrame's CRS).
+        A GeoDataFrame with LineString geometries representing stream segments and all edge attributes from the graph (excluding the 'crs' attribute which is set as the GeoDataFrame's CRS).
     """
     edges = []
     for u, v, data in G.edges(data=True):

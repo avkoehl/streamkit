@@ -24,8 +24,7 @@ def rasterize_nhd(nhd_flowlines: gpd.GeoDataFrame, dem: xr.DataArray) -> xr.Data
             Used to determine flow directions for stream tracing.
 
     Returns:
-        A raster DataArray where each pixel value represents a unique stream ID
-        (0 for non-stream pixels, consecutive positive integers for stream segments).
+        A raster DataArray where each pixel value represents a unique stream ID (0 for non-stream pixels, consecutive positive integers for stream segments).
     """
     channel_heads = _nhd_channel_heads(nhd_flowlines)
 

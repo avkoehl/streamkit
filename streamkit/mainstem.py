@@ -14,8 +14,7 @@ def label_mainstem(G: nx.DiGraph) -> nx.DiGraph:
             run strahler_order() and upstream_length() first.
 
     Returns:
-        A copy of the input graph with edges labeled with a 'mainstem' boolean
-        attribute indicating whether each edge is part of the main channel.
+        A copy of the input graph with edges labeled with a 'mainstem' boolean attribute indicating whether each edge is part of the main channel.
 
     Raises:
         ValueError: If any edge is missing the required 'strahler' or

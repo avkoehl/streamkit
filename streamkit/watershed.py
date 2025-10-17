@@ -1,4 +1,5 @@
 import tempfile
+import warnings
 
 import numpy as np
 import pandas as pd
@@ -48,8 +49,7 @@ def flow_accumulation_workflow(
     Args:
         dem: DEM raster
     Returns:
-        A tuple containing the conditioned DEM, flow directions, and flow
-        accumulation rasters
+        (conditioned DEM, flow directions, and flow accumulation)
 
     """
     # wbt condition
@@ -113,7 +113,17 @@ def _identify_pour_points(stream_raster, flow_accumulation):
     for stream_val in np.unique(stream_raster.data):
         if stream_val == 0:
             continue
+        if np.isnan(stream_val):
+            continue
         rows, cols = np.where(stream_raster.data == stream_val)
+
+        # if less than 2 cells, skip
+        if len(rows) < 2:
+            warnings.warn(
+                f"Stream segment {stream_val} has less than 2 cells, skipping."
+            )
+            continue
+
         acc_vals = flow_accumulation.data[rows, cols]
         max_idx = np.argmax(acc_vals)
         pour_points.append(

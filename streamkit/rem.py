@@ -28,9 +28,7 @@ def compute_rem(
             in the units of the DEM's CRS.
 
     Returns:
-        Relative elevation model (REM) representing elevation relative to the
-        valley floor trend, with the same dimensions and coordinates as the
-        input DEM.
+        Relative elevation model (REM) representing elevation relative to the valley floor trend, with the same dimensions and coordinates as the input DEM.
     """
 
     points = _trend_line(linestring, dem, sample_distance)

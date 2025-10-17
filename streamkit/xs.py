@@ -25,7 +25,7 @@ def network_cross_sections(
         linestring_ids: Optional identifiers for each linestring. If None, the index of linestrings is used.
         smoothed: Whether to use smoothed angles for cross-sections.
     Returns:
-        linestrings of cross sections
+        cross section linestrings
     """
     if linestring_ids is None:
         linestring_ids = linestrings.index

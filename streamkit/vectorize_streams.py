@@ -19,22 +19,22 @@ def vectorize_streams(
         flow_directions: A raster of flow directions (ESRI D8 encoding).
         flow_accumulation: A raster of flow accumulation values.
     Returns:
-        A GeoDataFrame with LineString geometries representing the streams with
-        stream_id column (from the raster values).
+        A GeoDataFrame with LineString geometries representing the streams with stream_id column (from the raster values).
     """
     flowlines = []
     for stream_id in np.unique(stream_raster.values):
         if stream_id == 0 or np.isnan(stream_id):
             continue
 
-        stream = stream_raster.where(stream_raster == stream_id, other=0)
-        flow_acc = flow_accumulation.where(stream_raster == stream_id, other=0)
+        stream_mask = stream_raster == stream_id
+        flow_acc = flow_accumulation * stream_mask.data
+        flow_dir = flow_directions * stream_mask.data
 
         # skip any empty streams or those with one cell
-        if np.sum(stream.data > 0) < 2:
+        if np.sum(stream_mask) < 2:
             continue
 
-        line = _vectorize_single_stream(stream > 0, flow_directions, flow_acc)
+        line = _vectorize_single_stream(stream_mask, flow_dir, flow_acc)
         flowlines.append({"geometry": line, "stream_id": int(stream_id)})
 
     gdf = gpd.GeoDataFrame(flowlines, crs=stream_raster.rio.crs)

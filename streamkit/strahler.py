@@ -7,8 +7,7 @@ def strahler_order(G: nx.DiGraph) -> nx.DiGraph:
     Args:
         G: A directed graph representing a river network. Use 'vector_streams_to_networkx()' to create this from vector data.
     Returns:
-        The same directed graph with an additional 'strahler' attribute on each edge
-        indicating its Strahler order.
+        The same directed graph with an additional 'strahler' attribute on each edge indicating its Strahler order.
     """
     # first, find all root nodes
     # then, for each subgraph, find the strahler order of each edge

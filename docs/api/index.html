@@ -66,73 +66,48 @@
             
             
             
-                
-                <li >
-                    <a href="../data/">
-                      Downloading Data
-                    </a>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+                        <li >
+                            <a href="../data/">Downloading Data </a>
+                        </li>
+                        
+                    
+                        
+                        <li >
+                            <a href="../align_nhd/">Aligning NHD Data to DEM </a>
+                        </li>
+                        
+                    
+                        
+                        <li >
+                            <a href="../watershed/">Watershed Functions </a>
+                        </li>
+                        
+                    
+                        
+                        <li >
+                            <a href="../reaches/">Reach Delineation </a>
+                        </li>
+                        
+                    
+                        
+                        <li >
+                            <a href="../network/">Stream Network Analysis </a>
+                        </li>
+                        
+                    
+                        
+                        <li >
+                            <a href="../xs/">Cross Sections </a>
+                        </li>
+                        
+                    
+                    </ul>
                 </li>
-                
-            
-            
-            
-            
-            
-                
-                <li >
-                    <a href="../align_nhd/">
-                      Aligning NHD Data to DEM
-                    </a>
-                </li>
-                
-            
-            
-            
-            
-            
-                
-                <li >
-                    <a href="../watershed/">
-                      Watershed Functions
-                    </a>
-                </li>
-                
-            
-            
-            
-            
-            
-                
-                <li >
-                    <a href="../reaches/">
-                      Reach Delineation
-                    </a>
-                </li>
-                
-            
-            
-            
-            
-            
-                
-                <li >
-                    <a href="../network/">
-                      Stream Network Analysis
-                    </a>
-                </li>
-                
-            
-            
-            
-            
-            
-                
-                <li >
-                    <a href="../xs/">
-                      Cross Sections
-                    </a>
-                </li>
-                
             
             
             
@@ -152,16 +127,6 @@
 
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
             
             
             
@@ -222,7 +187,7 @@
 
 
 <h3 id="streamkit.watershed.compute_hand" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">watershed</span><span class="o">.</span><span class="n">compute_hand</span><span class="p">(</span><span class="n">dem</span><span class="p">,</span> <span class="n">flow_directions</span><span class="p">,</span> <span class="n">streams</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">compute_hand</span><span class="p">(</span><span class="n">dem</span><span class="p">,</span> <span class="n">flow_directions</span><span class="p">,</span> <span class="n">streams</span><span class="p">)</span></code>
 
 </h3>
 
@@ -257,7 +222,7 @@
 
 
 <h3 id="streamkit.watershed.flow_accumulation_workflow" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">watershed</span><span class="o">.</span><span class="n">flow_accumulation_workflow</span><span class="p">(</span><span class="n">dem</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">flow_accumulation_workflow</span><span class="p">(</span><span class="n">dem</span><span class="p">)</span></code>
 
 </h3>
 
@@ -364,7 +329,7 @@ with pysheds. Uses ESRI flow direction encoding.</p>
 
 
 <h3 id="streamkit.watershed.delineate_subbasins" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">watershed</span><span class="o">.</span><span class="n">delineate_subbasins</span><span class="p">(</span><span class="n">stream_raster</span><span class="p">,</span> <span class="n">flow_directions</span><span class="p">,</span> <span class="n">flow_accumulation</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">delineate_subbasins</span><span class="p">(</span><span class="n">stream_raster</span><span class="p">,</span> <span class="n">flow_directions</span><span class="p">,</span> <span class="n">flow_accumulation</span><span class="p">)</span></code>
 
 </h3>
 
@@ -538,7 +503,7 @@ segment</p>
 
 
 <h3 id="streamkit.vectorize_streams.vectorize_streams" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">vectorize_streams</span><span class="o">.</span><span class="n">vectorize_streams</span><span class="p">(</span><span class="n">stream_raster</span><span class="p">,</span> <span class="n">flow_directions</span><span class="p">,</span> <span class="n">flow_accumulation</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">vectorize_streams</span><span class="p">(</span><span class="n">stream_raster</span><span class="p">,</span> <span class="n">flow_directions</span><span class="p">,</span> <span class="n">flow_accumulation</span><span class="p">)</span></code>
 
 </h3>
 
@@ -629,7 +594,7 @@ Returns:
 
 
 <h3 id="streamkit.nx_convert.vector_streams_to_networkx" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">nx_convert</span><span class="o">.</span><span class="n">vector_streams_to_networkx</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">vector_streams_to_networkx</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span></code>
 
 </h3>
 
@@ -760,7 +725,7 @@ segments, along with any associated attributes.</p>
 
 
 <h3 id="streamkit.nx_convert.networkx_to_gdf" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">nx_convert</span><span class="o">.</span><span class="n">networkx_to_gdf</span><span class="p">(</span><span class="n">G</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">networkx_to_gdf</span><span class="p">(</span><span class="n">G</span><span class="p">)</span></code>
 
 </h3>
 
@@ -895,7 +860,7 @@ vector_streams_to_networkx().</p>
 
 
 <h3 id="streamkit.strahler.strahler_order" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">strahler</span><span class="o">.</span><span class="n">strahler_order</span><span class="p">(</span><span class="n">G</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">strahler_order</span><span class="p">(</span><span class="n">G</span><span class="p">)</span></code>
 
 </h3>
 
@@ -979,7 +944,7 @@ vector_streams_to_networkx().</p>
 
 
 <h3 id="streamkit.upstream_length.upstream_length" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">upstream_length</span><span class="o">.</span><span class="n">upstream_length</span><span class="p">(</span><span class="n">G</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">upstream_length</span><span class="p">(</span><span class="n">G</span><span class="p">)</span></code>
 
 </h3>
 
@@ -1123,7 +1088,7 @@ vector_streams_to_networkx().</p>
 
 
 <h3 id="streamkit.mainstem.label_mainstem" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">mainstem</span><span class="o">.</span><span class="n">label_mainstem</span><span class="p">(</span><span class="n">G</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">label_mainstem</span><span class="p">(</span><span class="n">G</span><span class="p">)</span></code>
 
 </h3>
 
@@ -1305,7 +1270,7 @@ run strahler_order() and upstream_length() first.</p>
 
 
 <h3 id="streamkit.xs.network_cross_sections" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">xs</span><span class="o">.</span><span class="n">network_cross_sections</span><span class="p">(</span><span class="n">linestrings</span><span class="p">,</span> <span class="n">interval_distance</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">linestring_ids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">smoothed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">network_cross_sections</span><span class="p">(</span><span class="n">linestrings</span><span class="p">,</span> <span class="n">interval_distance</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">linestring_ids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">smoothed</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 </h3>
 
@@ -1501,7 +1466,7 @@ run strahler_order() and upstream_length() first.</p>
 
 
 <h3 id="streamkit.profile.sample_cross_sections" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">profile</span><span class="o">.</span><span class="n">sample_cross_sections</span><span class="p">(</span><span class="n">xs_linestrings</span><span class="p">,</span> <span class="n">point_interval</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">sample_cross_sections</span><span class="p">(</span><span class="n">xs_linestrings</span><span class="p">,</span> <span class="n">point_interval</span><span class="p">)</span></code>
 
 </h3>
 
@@ -1695,7 +1660,7 @@ units of the GeoDataFrame's CRS.</p>
 
 
 <h3 id="streamkit.smooth.gaussian_smooth_raster" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">smooth</span><span class="o">.</span><span class="n">gaussian_smooth_raster</span><span class="p">(</span><span class="n">raster</span><span class="p">,</span> <span class="n">spatial_radius</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">gaussian_smooth_raster</span><span class="p">(</span><span class="n">raster</span><span class="p">,</span> <span class="n">spatial_radius</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span></code>
 
 </h3>
 
@@ -1861,7 +1826,7 @@ the strength of smoothing.</p>
 
 
 <h3 id="streamkit.upstream_length.upstream_length_raster" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">upstream_length</span><span class="o">.</span><span class="n">upstream_length_raster</span><span class="p">(</span><span class="n">streams</span><span class="p">,</span> <span class="n">flow_direction</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">upstream_length_raster</span><span class="p">(</span><span class="n">streams</span><span class="p">,</span> <span class="n">flow_direction</span><span class="p">)</span></code>
 
 </h3>
 
@@ -1972,7 +1937,7 @@ the strength of smoothing.</p>
 
 
 <h3 id="streamkit.reach.delineate_reaches" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">reach</span><span class="o">.</span><span class="n">delineate_reaches</span><span class="p">(</span><span class="n">stream_raster</span><span class="p">,</span> <span class="n">dem</span><span class="p">,</span> <span class="n">penalty</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">smooth_window</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">threshold_degrees</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">delineate_reaches</span><span class="p">(</span><span class="n">stream_raster</span><span class="p">,</span> <span class="n">dem</span><span class="p">,</span> <span class="n">penalty</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">min_length</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">smooth_window</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">threshold_degrees</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2245,7 +2210,7 @@ threshold in degrees.</p>
 
 
 <h3 id="streamkit.data.get_huc_data" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get_huc_data</span><span class="p">(</span><span class="n">hucid</span><span class="p">,</span> <span class="n">nhd_layer</span><span class="o">=</span><span class="s1">&#39;flowline_mr&#39;</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">,</span> <span class="n">dem_resolution</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">wbd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nhd</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">get_huc_data</span><span class="p">(</span><span class="n">hucid</span><span class="p">,</span> <span class="n">nhd_layer</span><span class="o">=</span><span class="s1">&#39;flowline_mr&#39;</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">,</span> <span class="n">dem_resolution</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">wbd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nhd</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2474,7 +2439,7 @@ instance will be created.</p>
 
 
 <h3 id="streamkit.data.download_huc_bounds" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">download_huc_bounds</span><span class="p">(</span><span class="n">huc</span><span class="p">,</span> <span class="n">wbd</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">download_huc_bounds</span><span class="p">(</span><span class="n">huc</span><span class="p">,</span> <span class="n">wbd</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2511,7 +2476,7 @@ instance will be created.</p>
 
 
 <h3 id="streamkit.data.download_flowlines" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">download_flowlines</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="n">nhd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="s1">&#39;flowline_mr&#39;</span><span class="p">,</span> <span class="n">linestring_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">download_flowlines</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="n">nhd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="s1">&#39;flowline_mr&#39;</span><span class="p">,</span> <span class="n">linestring_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2562,7 +2527,7 @@ instance will be created.</p>
 
 
 <h3 id="streamkit.data.download_dem" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">download_dem</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="n">resolution</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">download_dem</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="n">resolution</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2602,7 +2567,7 @@ instance will be created.</p>
 
 
 <h3 id="streamkit.nhd.rasterize_nhd" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">streamkit</span><span class="o">.</span><span class="n">nhd</span><span class="o">.</span><span class="n">rasterize_nhd</span><span class="p">(</span><span class="n">nhd_flowlines</span><span class="p">,</span> <span class="n">dem</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="n">rasterize_nhd</span><span class="p">(</span><span class="n">nhd_flowlines</span><span class="p">,</span> <span class="n">dem</span><span class="p">)</span></code>
 
 </h3>
 

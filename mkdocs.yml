@@ -6,7 +6,7 @@ repo_url: https://github.com/avkoehl/streamkit
 repo_name: avkoehl/streamkit
 
 theme:
-  name: material
+  name: cluster
   icon:
     repo: fontawesome/brands/github
 plugins:

@@ -18,16 +18,18 @@ plugins:
             docstring_style: google
             show_source: true
             show_root_heading: true
+            show_root_full_path: false
             heading_level: 3
   - mkdocs-jupyter:
       include_source: true
       execute: false 
 nav:
   - Home: index.md
-  - Downloading Data: 'data.ipynb'
-  - Aligning NHD Data to DEM: 'align_nhd.ipynb'
-  - Watershed Functions: 'watershed.ipynb'
-  - Reach Delineation: 'reaches.ipynb'
-  - Stream Network Analysis: 'network.ipynb'
-  - Cross Sections: 'xs.ipynb'
+  - Examples:
+      - Downloading Data: 'data.ipynb'
+      - Aligning NHD Data to DEM: 'align_nhd.ipynb'
+      - Watershed Functions: 'watershed.ipynb'
+      - Reach Delineation: 'reaches.ipynb'
+      - Stream Network Analysis: 'network.ipynb'
+      - Cross Sections: 'xs.ipynb'
   - API Reference: api.md

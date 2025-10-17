@@ -6,7 +6,7 @@ repo_url: https://github.com/avkoehl/streamkit
 repo_name: avkoehl/streamkit
 
 theme:
-  name: cluster
+  name: readthedocs
   icon:
     repo: fontawesome/brands/github
 plugins:
@@ -25,6 +25,7 @@ plugins:
       execute: false 
 nav:
   - Home: index.md
+  - API Reference: api.md
   - Examples:
       - Downloading Data: 'data.ipynb'
       - Aligning NHD Data to DEM: 'align_nhd.ipynb'
@@ -32,4 +33,3 @@ nav:
       - Reach Delineation: 'reaches.ipynb'
       - Stream Network Analysis: 'network.ipynb'
       - Cross Sections: 'xs.ipynb'
-  - API Reference: api.md

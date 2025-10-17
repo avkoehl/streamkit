@@ -1,185 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../img/favicon.ico">
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>API Reference - Streamkit Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "API Reference";
+        var mkdocs_page_input_path = "api.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
 
-        <title>API Reference - Streamkit Documentation</title>
+<body class="wy-body-for-nav" role="document">
 
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="../css/highlight.min.css">
-        <link href="../css/base.css" rel="stylesheet">
-        <link href="../assets/_mkdocstrings.css" rel="stylesheet">
-
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-
-    </head>
-
-    <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-            <!-- Main title -->
-            <a class="navbar-brand" href="..">
-            
-            Streamkit Documentation
-            </a>
-        </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-            <!-- Main navigation -->
-            <ul class="nav navbar-nav">
-            
-            
-            
-                
-                <li >
-                    <a href="..">
-                      Home
-                    </a>
-                </li>
-                
-            
-            
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        
-                        <li >
-                            <a href="../data/">Downloading Data </a>
-                        </li>
-                        
-                    
-                        
-                        <li >
-                            <a href="../align_nhd/">Aligning NHD Data to DEM </a>
-                        </li>
-                        
-                    
-                        
-                        <li >
-                            <a href="../watershed/">Watershed Functions </a>
-                        </li>
-                        
-                    
-                        
-                        <li >
-                            <a href="../reaches/">Reach Delineation </a>
-                        </li>
-                        
-                    
-                        
-                        <li >
-                            <a href="../network/">Stream Network Analysis </a>
-                        </li>
-                        
-                    
-                        
-                        <li >
-                            <a href="../xs/">Cross Sections </a>
-                        </li>
-                        
-                    
-                    </ul>
-                </li>
-            
-            
-            
-            
-            
-                
-                <li class="active">
-                    <a href="./">
-                      API Reference
-                    </a>
-                </li>
-                
-            
-            
-            
-            </ul>
-
-            <!-- Search, Navigation and Repo links -->
-            <ul class="nav navbar-nav navbar-right">
-            
-            
-            
-            
-            
-            
-            
-              
-                
-                <li>
-                    <a href="https://github.com/avkoehl/streamkit">
-                        
-                            <i class="fa fa-code-fork"></i>
-                        
-                        avkoehl/streamkit
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Streamkit Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
 </div>
+      </div>
 
-        <div class="container">
-            <div class="col-md-3">
-  
-<div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-    
-        <li class="main active"><a href="#api-reference">API Reference</a></li>
-        
-            <li><a href="#watershed-analysis">Watershed Analysis</a></li>
-        
-            <li><a href="#stream-vectorization-and-network-conversion">Stream Vectorization and Network Conversion</a></li>
-        
-            <li><a href="#network-analysis">Network Analysis</a></li>
-        
-            <li><a href="#terrain-analysis">Terrain Analysis</a></li>
-        
-            <li><a href="#reach-delineation">Reach Delineation</a></li>
-        
-            <li><a href="#data-download-utilities">Data Download Utilities</a></li>
-        
-            <li><a href="#nhd-utilities">NHD Utilities</a></li>
-        
-    
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">API Reference</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#watershed-analysis">Watershed Analysis</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#streamkit.watershed.compute_hand">compute_hand</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#streamkit.watershed.flow_accumulation_workflow">flow_accumulation_workflow</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#streamkit.watershed.delineate_subbasins">delineate_subbasins</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#stream-vectorization-and-network-conversion">Stream Vectorization and Network Conversion</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#streamkit.vectorize_streams.vectorize_streams">vectorize_streams</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#streamkit.nx_convert.vector_streams_to_networkx">vector_streams_to_networkx</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#streamkit.nx_convert.networkx_to_gdf">networkx_to_gdf</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#network-analysis">Network Analysis</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#streamkit.strahler.strahler_order">strahler_order</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#streamkit.upstream_length.upstream_length">upstream_length</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#streamkit.mainstem.label_mainstem">label_mainstem</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#streamkit.xs.network_cross_sections">network_cross_sections</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#streamkit.profile.sample_cross_sections">sample_cross_sections</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#terrain-analysis">Terrain Analysis</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#streamkit.smooth.gaussian_smooth_raster">gaussian_smooth_raster</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#streamkit.upstream_length.upstream_length_raster">upstream_length_raster</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#reach-delineation">Reach Delineation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#streamkit.reach.delineate_reaches">delineate_reaches</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#data-download-utilities">Data Download Utilities</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#streamkit.data.get_huc_data">get_huc_data</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#streamkit.data.download_huc_bounds">download_huc_bounds</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#streamkit.data.download_flowlines">download_flowlines</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#streamkit.data.download_dem">download_dem</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#nhd-utilities">NHD Utilities</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#streamkit.nhd.rasterize_nhd">rasterize_nhd</a>
+    </li>
+        </ul>
+    </li>
     </ul>
-</div>
-  
-</div>
-            <div class="col-md-9" role="main">
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Examples</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../data/">Downloading Data</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../align_nhd/">Aligning NHD Data to DEM</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../watershed/">Watershed Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../reaches/">Reach Delineation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../network/">Stream Network Analysis</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../xs/">Cross Sections</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
 
-<h1 id="api-reference">API Reference</h1>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Streamkit Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">API Reference</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/avkoehl/streamkit/edit/master/docs/api.md">Edit on avkoehl/streamkit</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="api-reference">API Reference</h1>
 <h2 id="watershed-analysis">Watershed Analysis</h2>
 
 
@@ -235,36 +211,29 @@ depression with fix flats' algorithm. Flow direction and accumulation done
 with pysheds. Uses ESRI flow direction encoding.</p>
 
 
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>dem</code>
-            </td>
-            <td>
-                  <code><span title="xarray.DataArray">DataArray</span></code>
-            </td>
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>dem</code></b>
+                  (<code><span title="xarray.DataArray">DataArray</span></code>)
+              –
               <div class="doc-md-description">
                 <p>DEM raster</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-        <p>Returns:
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>        <p>Returns:
     (conditioned DEM, flow directions, and flow accumulation)</p>
 
 
@@ -341,69 +310,46 @@ for each unique stream segment by finding the cell with the highest flow
 accumulation for that segment (based on ID).</p>
 
 
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>stream_raster</code>
-            </td>
-            <td>
-                  <code><span title="xarray.DataArray">DataArray</span></code>
-            </td>
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>stream_raster</code></b>
+                  (<code><span title="xarray.DataArray">DataArray</span></code>)
+              –
               <div class="doc-md-description">
                 <p>Raster of channel network with unique IDs for each
 segment</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>flow_directions</code>
-            </td>
-            <td>
-                  <code><span title="xarray.DataArray">DataArray</span></code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>flow_directions</code></b>
+                  (<code><span title="xarray.DataArray">DataArray</span></code>)
+              –
               <div class="doc-md-description">
                 <p>Flow directions raster (ESRI d8 encoding)</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>flow_accumulation</code>
-            </td>
-            <td>
-                  <code><span title="xarray.DataArray">DataArray</span></code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>flow_accumulation</code></b>
+                  (<code><span title="xarray.DataArray">DataArray</span></code>)
+              –
               <div class="doc-md-description">
                 <p>Flow accumulation raster</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-        <p>Returns:
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>        <p>Returns:
     Raster of subbasins with same IDs as stream_raster</p>
 
 
@@ -607,60 +553,53 @@ coordinates) and edges represent stream segments. All attributes from the input
 GeoDataFrame are preserved as edge attributes in the graph.</p>
 
 
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>lines</code>
-            </td>
-            <td>
-                  <code><span title="geopandas.GeoDataFrame">GeoDataFrame</span></code>
-            </td>
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>lines</code></b>
+                  (<code><span title="geopandas.GeoDataFrame">GeoDataFrame</span></code>)
+              –
               <div class="doc-md-description">
                 <p>GeoDataFrame containing LineString geometries representing stream
 segments, along with any associated attributes.</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
                   <code><span title="networkx.DiGraph">DiGraph</span></code>
-            </td>
-            <td>
+              –
               <div class="doc-md-description">
                 <p>A directed graph where edges contain the original geometry, CRS, and all other attributes from the input GeoDataFrame.</p>
               </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
             <details class="quote">
               <summary>Source code in <code>streamkit/nx_convert.py</code></summary>
@@ -738,61 +677,54 @@ each edge into a LineString geometry connecting its start and end nodes.
 All edge attributes are preserved in the output GeoDataFrame.</p>
 
 
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>G</code>
-            </td>
-            <td>
-                  <code><span title="networkx.DiGraph">DiGraph</span></code>
-            </td>
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>G</code></b>
+                  (<code><span title="networkx.DiGraph">DiGraph</span></code>)
+              –
               <div class="doc-md-description">
                 <p>A directed graph representing stream networks. Edges must contain
 'crs' and 'geometry' attributes, typically created by
 vector_streams_to_networkx().</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
                   <code><span title="geopandas.GeoDataFrame">GeoDataFrame</span></code>
-            </td>
-            <td>
+              –
               <div class="doc-md-description">
                 <p>A GeoDataFrame with LineString geometries representing stream segments and all edge attributes from the graph (excluding the 'crs' attribute which is set as the GeoDataFrame's CRS).</p>
               </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
             <details class="quote">
               <summary>Source code in <code>streamkit/nx_convert.py</code></summary>
@@ -870,36 +802,29 @@ vector_streams_to_networkx().</p>
         <p>Calculate the Strahler order for each edge in a directed graph.</p>
 
 
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>G</code>
-            </td>
-            <td>
-                  <code><span title="networkx.DiGraph">DiGraph</span></code>
-            </td>
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>G</code></b>
+                  (<code><span title="networkx.DiGraph">DiGraph</span></code>)
+              –
               <div class="doc-md-description">
                 <p>A directed graph representing a river network. Use 'vector_streams_to_networkx()' to create this from vector data.</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-        <p>Returns:
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>        <p>Returns:
     The same directed graph with an additional 'strahler' attribute on each edge indicating its Strahler order.</p>
 
 
@@ -954,36 +879,29 @@ vector_streams_to_networkx().</p>
         <p>Compute the maximum upstream length for each edge in a directed graph G. Uses the length attribute of the edge geometry.</p>
 
 
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>G</code>
-            </td>
-            <td>
-                  <code><span title="networkx.DiGraph">DiGraph</span></code>
-            </td>
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>G</code></b>
+                  (<code><span title="networkx.DiGraph">DiGraph</span></code>)
+              –
               <div class="doc-md-description">
                 <p>A directed graph where edges have a 'geometry' attribute (shapely LineString).</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-        <p>Returns:
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>        <p>Returns:
     A copy of the graph with an additional attribute 'max_upstream_length' for each edge.</p>
 
 
@@ -1101,85 +1019,78 @@ by traversing from outlet nodes upstream. Edges are labeled with a 'mainstem'
 attribute set to True for mainstem edges and False for tributaries.</p>
 
 
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>G</code>
-            </td>
-            <td>
-                  <code><span title="networkx.DiGraph">DiGraph</span></code>
-            </td>
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>G</code></b>
+                  (<code><span title="networkx.DiGraph">DiGraph</span></code>)
+              –
               <div class="doc-md-description">
                 <p>A directed graph representing a stream network. Each edge must have
 'strahler' and 'max_upstream_length' attributes. If these are missing,
 run strahler_order() and upstream_length() first.</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
                   <code><span title="networkx.DiGraph">DiGraph</span></code>
-            </td>
-            <td>
+              –
               <div class="doc-md-description">
                 <p>A copy of the input graph with edges labeled with a 'mainstem' boolean attribute indicating whether each edge is part of the main channel.</p>
               </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-
-<p><span class="doc-section-title">Raises:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Raises:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
                   <code><span title="ValueError">ValueError</span></code>
-            </td>
-            <td>
+              –
               <div class="doc-md-description">
                 <p>If any edge is missing the required 'strahler' or
 'max_upstream_length' attributes.</p>
               </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
             <details class="quote">
               <summary>Source code in <code>streamkit/mainstem.py</code></summary>
@@ -1280,100 +1191,65 @@ run strahler_order() and upstream_length() first.</p>
         <p>Create cross-sections at regular intervals along linestrings.</p>
 
 
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>linestrings</code>
-            </td>
-            <td>
-                  <code><span title="geopandas.GeoSeries">GeoSeries</span></code>
-            </td>
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>linestrings</code></b>
+                  (<code><span title="geopandas.GeoSeries">GeoSeries</span></code>)
+              –
               <div class="doc-md-description">
                 <p>Linestring geometries.</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>interval_distance</code>
-            </td>
-            <td>
-                  <code><span title="float">float</span></code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>interval_distance</code></b>
+                  (<code><span title="float">float</span></code>)
+              –
               <div class="doc-md-description">
                 <p>Distance between cross-sections along the linestrings.</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>width</code>
-            </td>
-            <td>
-                  <code><span title="float">float</span></code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>width</code></b>
+                  (<code><span title="float">float</span></code>)
+              –
               <div class="doc-md-description">
                 <p>Width of each cross-section.</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>linestring_ids</code>
-            </td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="typing.Sequence">Sequence</span>]</code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>linestring_ids</code></b>
+                  (<code><span title="typing.Optional">Optional</span>[<span title="typing.Sequence">Sequence</span>]</code>, default:
+                      <code>None</code>
+)
+              –
               <div class="doc-md-description">
                 <p>Optional identifiers for each linestring. If None, the index of linestrings is used.</p>
               </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>smoothed</code>
-            </td>
-            <td>
-                  <code><span title="bool">bool</span></code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>smoothed</code></b>
+                  (<code><span title="bool">bool</span></code>, default:
+                      <code>False</code>
+)
+              –
               <div class="doc-md-description">
                 <p>Whether to use smoothed angles for cross-sections.</p>
               </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-        <p>Returns:
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>        <p>Returns:
     cross section linestrings</p>
 
 
@@ -1479,70 +1355,54 @@ from the center point. Points are labeled as 'center', 'positive' (downstream
 of center), or 'negative' (upstream of center).</p>
 
 
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>xs_linestrings</code>
-            </td>
-            <td>
-                  <code><span title="geopandas.GeoDataFrame">GeoDataFrame</span></code>
-            </td>
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>xs_linestrings</code></b>
+                  (<code><span title="geopandas.GeoDataFrame">GeoDataFrame</span></code>)
+              –
               <div class="doc-md-description">
                 <p>GeoDataFrame containing LineString geometries representing
 cross-sections. If 'xs_id' column is not present, sequential IDs will
 be automatically assigned.</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>point_interval</code>
-            </td>
-            <td>
-                  <code><span title="float">float</span></code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>point_interval</code></b>
+                  (<code><span title="float">float</span></code>)
+              –
               <div class="doc-md-description">
                 <p>Spacing between points along each cross-section, in the
 units of the GeoDataFrame's CRS.</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
                   <code><span title="geopandas.GeoDataFrame">GeoDataFrame</span></code>
-            </td>
-            <td>
+              –
               <div class="doc-md-description">
                 <p>A GeoDataFrame with Point geometries containing columns:
 - xs_id: Cross-section identifier
@@ -1552,11 +1412,12 @@ units of the GeoDataFrame's CRS.</p>
 - geometry: Point geometry
 - Additional columns from input xs_linestrings are preserved</p>
               </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
             <details class="quote">
               <summary>Source code in <code>streamkit/profile.py</code></summary>
@@ -1673,93 +1534,70 @@ redistributing values between non-NaN pixels. NaN pixels remain NaN in
 the output.</p>
 
 
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>raster</code>
-            </td>
-            <td>
-                  <code><span title="xarray.DataArray">DataArray</span></code>
-            </td>
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>raster</code></b>
+                  (<code><span title="xarray.DataArray">DataArray</span></code>)
+              –
               <div class="doc-md-description">
                 <p>Input raster to smooth.</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>spatial_radius</code>
-            </td>
-            <td>
-                  <code><span title="float">float</span></code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>spatial_radius</code></b>
+                  (<code><span title="float">float</span></code>)
+              –
               <div class="doc-md-description">
                 <p>Radius of the Gaussian kernel in map units (e.g., meters).
 Converted internally to pixels based on raster resolution.</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>sigma</code>
-            </td>
-            <td>
-                  <code><span title="float">float</span></code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>sigma</code></b>
+                  (<code><span title="float">float</span></code>)
+              –
               <div class="doc-md-description">
                 <p>Standard deviation of the Gaussian kernel in pixels. Controls
 the strength of smoothing.</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
                   <code><span title="xarray.DataArray">DataArray</span></code>
-            </td>
-            <td>
+              –
               <div class="doc-md-description">
                 <p>Smoothed raster with the same dimensions, coordinates, and NaN pattern as the input.</p>
               </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
             <details class="quote">
               <summary>Source code in <code>streamkit/smooth.py</code></summary>
@@ -1836,52 +1674,37 @@ the strength of smoothing.</p>
         <p>For each cell in the stream raster, compute the maximum upstream length</p>
 
 
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>streams</code>
-            </td>
-            <td>
-                  <code><span title="xarray.DataArray">DataArray</span></code>
-            </td>
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>streams</code></b>
+                  (<code><span title="xarray.DataArray">DataArray</span></code>)
+              –
               <div class="doc-md-description">
                 <p>A binary raster where stream cells are 1 and non-stream cells are 0.</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>flow_direction</code>
-            </td>
-            <td>
-                  <code><span title="xarray.DataArray">DataArray</span></code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>flow_direction</code></b>
+                  (<code><span title="xarray.DataArray">DataArray</span></code>)
+              –
               <div class="doc-md-description">
                 <p>A raster representing flow direction using ESRI convention.</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-        <p>Returns:
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>        <p>Returns:
     A raster where each stream cell contains the maximum upstream length in map units.</p>
 
 
@@ -1950,143 +1773,104 @@ to identify distinct reaches along each stream based on slope variations.
 Adjacent reaches with similar slopes can be merged using the threshold parameter.</p>
 
 
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>stream_raster</code>
-            </td>
-            <td>
-                  <code><span title="xarray.DataArray">DataArray</span></code>
-            </td>
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>stream_raster</code></b>
+                  (<code><span title="xarray.DataArray">DataArray</span></code>)
+              –
               <div class="doc-md-description">
                 <p>Labeled stream network where each unique value represents
 a stream segment (0 for non-stream pixels).</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>dem</code>
-            </td>
-            <td>
-                  <code><span title="xarray.DataArray">DataArray</span></code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>dem</code></b>
+                  (<code><span title="xarray.DataArray">DataArray</span></code>)
+              –
               <div class="doc-md-description">
                 <p>Digital elevation model for slope calculations.</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>penalty</code>
-            </td>
-            <td>
-                  <code><span title="float">float</span> | None</code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>penalty</code></b>
+                  (<code><span title="float">float</span> | None</code>, default:
+                      <code>None</code>
+)
+              –
               <div class="doc-md-description">
                 <p>PELT algorithm penalty parameter. If None, automatically calculated
 as log(n) * variance of slope signal.</p>
               </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>min_length</code>
-            </td>
-            <td>
-                  <code><span title="float">float</span></code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>min_length</code></b>
+                  (<code><span title="float">float</span></code>, default:
+                      <code>500</code>
+)
+              –
               <div class="doc-md-description">
                 <p>Minimum reach length in meters.</p>
               </div>
-            </td>
-            <td>
-                  <code>500</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>smooth_window</code>
-            </td>
-            <td>
-                  <code><span title="int">int</span> | None</code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>smooth_window</code></b>
+                  (<code><span title="int">int</span> | None</code>, default:
+                      <code>None</code>
+)
+              –
               <div class="doc-md-description">
                 <p>Window size for smoothing slope values before segmentation.
 If None, no smoothing is applied.</p>
               </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>threshold_degrees</code>
-            </td>
-            <td>
-                  <code><span title="float">float</span></code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>threshold_degrees</code></b>
+                  (<code><span title="float">float</span></code>, default:
+                      <code>1.0</code>
+)
+              –
               <div class="doc-md-description">
                 <p>Merge adjacent reaches if slope difference is below this
 threshold in degrees.</p>
               </div>
-            </td>
-            <td>
-                  <code>1.0</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
                   <code><span title="xarray.DataArray">DataArray</span></code>
-            </td>
-            <td>
+              –
               <div class="doc-md-description">
                 <p>A raster where each pixel value represents a unique reach ID (0 for non-stream pixels). Reach IDs are computed as reach_number + stream_id * 1000.</p>
               </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
             <details class="quote">
               <summary>Source code in <code>streamkit/reach.py</code></summary>
@@ -2222,143 +2006,106 @@ threshold in degrees.</p>
 specified Hydrologic Unit Code (HUC) area.</p>
 
 
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>hucid</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>hucid</code></b>
+                  (<code><span title="str">str</span></code>)
+              –
               <div class="doc-md-description">
                 <p>The Hydrologic Unit Code identifier for the watershed area.</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>nhd_layer</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>nhd_layer</code></b>
+                  (<code><span title="str">str</span></code>, default:
+                      <code>&#39;flowline_mr&#39;</code>
+)
+              –
               <div class="doc-md-description">
                 <p>The National Hydrography Dataset layer name for flowlines.
 Defaults to "flowline_mr" (medium resolution).</p>
               </div>
-            </td>
-            <td>
-                  <code>&#39;flowline_mr&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>crs</code>
-            </td>
-            <td>
-                  <code><span title="str">str</span></code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>crs</code></b>
+                  (<code><span title="str">str</span></code>, default:
+                      <code>&#39;EPSG:4326&#39;</code>
+)
+              –
               <div class="doc-md-description">
                 <p>The coordinate reference system for the output data as an EPSG code
 or other CRS string. Defaults to "EPSG:4326" (WGS84).</p>
               </div>
-            </td>
-            <td>
-                  <code>&#39;EPSG:4326&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>dem_resolution</code>
-            </td>
-            <td>
-                  <code><span title="int">int</span></code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>dem_resolution</code></b>
+                  (<code><span title="int">int</span></code>, default:
+                      <code>10</code>
+)
+              –
               <div class="doc-md-description">
                 <p>The spatial resolution of the DEM in meters. Defaults to 10.</p>
               </div>
-            </td>
-            <td>
-                  <code>10</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>wbd</code>
-            </td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="pygeohydro.WBD">WBD</span>]</code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>wbd</code></b>
+                  (<code><span title="typing.Optional">Optional</span>[<span title="pygeohydro.WBD">WBD</span>]</code>, default:
+                      <code>None</code>
+)
+              –
               <div class="doc-md-description">
                 <p>An existing Watershed Boundary Dataset object. If None, a new WBD
 instance will be created.</p>
               </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>nhd</code>
-            </td>
-            <td>
-                  <code><span title="typing.Optional">Optional</span>[<span title="pynhd.NHD">NHD</span>]</code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>nhd</code></b>
+                  (<code><span title="typing.Optional">Optional</span>[<span title="pynhd.NHD">NHD</span>]</code>, default:
+                      <code>None</code>
+)
+              –
               <div class="doc-md-description">
                 <p>An existing National Hydrography Dataset object. If None, a new NHD
 instance will be created.</p>
               </div>
-            </td>
-            <td>
-                  <code>None</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
                   <code>flowlines gdf, dem raster</code>
-            </td>
-            <td>
+              –
               <div class="doc-md-description">
                 
               </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
             <details class="quote">
               <summary>Source code in <code>streamkit/data.py</code></summary>
@@ -2581,77 +2328,62 @@ and linking stream segments. Small streams (&lt; 2 pixels) are removed and
 the remaining streams are relabeled with consecutive integers.</p>
 
 
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
-                <code>nhd_flowlines</code>
-            </td>
-            <td>
-                  <code><span title="geopandas.GeoDataFrame">GeoDataFrame</span></code>
-            </td>
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>nhd_flowlines</code></b>
+                  (<code><span title="geopandas.GeoDataFrame">GeoDataFrame</span></code>)
+              –
               <div class="doc-md-description">
                 <p>Vector flowline data from the National Hydrography Dataset
 containing stream geometries.</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-                <code>dem</code>
-            </td>
-            <td>
-                  <code><span title="xarray.DataArray">DataArray</span></code>
-            </td>
-            <td>
+            </li>
+            <li>
+              <b><code>dem</code></b>
+                  (<code><span title="xarray.DataArray">DataArray</span></code>)
+              –
               <div class="doc-md-description">
                 <p>Digital elevation model raster with spatial reference information.
 Used to determine flow directions for stream tracing.</p>
               </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-
-    <p><span class="doc-section-title">Returns:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td>
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
                   <code><span title="xarray.DataArray">DataArray</span></code>
-            </td>
-            <td>
+              –
               <div class="doc-md-description">
                 <p>A raster DataArray where each pixel value represents a unique stream ID (0 for non-stream pixels, consecutive positive integers for stream segments).</p>
               </div>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
             <details class="quote">
               <summary>Source code in <code>streamkit/nhd.py</code></summary>
@@ -2752,19 +2484,56 @@ Used to determine flow directions for stream tracing.</p>
             </details>
     </div>
 
-</div></div>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../data/" class="btn btn-neutral float-right" title="Downloading Data">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
         </div>
+      </div>
 
-    <footer class="col-md-12">
-        <hr>
-        
-    </footer>
+    </section>
 
-        <script src="../js/jquery.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
-        <script src="../js/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
-        <script src="../js/base.js"></script>
-        <script src="../search/main.js"></script>
-    </body>
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/avkoehl/streamkit" class="fa fa-code-fork" style="color: #fcfcfc"> avkoehl/streamkit</a>
+        </span>
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../data/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
 </html>
